@@ -15,6 +15,7 @@
 #include "./src/0013.cpp"
 #include "./src/0014.cpp"
 #include "./src/0015.cpp"
+#include "./src/0016.cpp"
 using namespace std;
 
 int main(int argc, char const *argv[])
@@ -36,9 +37,10 @@ int main(int argc, char const *argv[])
         {leetcode_0013::key, leetcode_0013::main},
         {leetcode_0014::key, leetcode_0014::main},
         {leetcode_0015::key, leetcode_0015::main},
+        {leetcode_0016::key, leetcode_0016::main},
     };
 
-    string lckey = "0015";
+    string lckey = "0016";
     if (argc > 1)
     {
         string input = string(argv[1]);
