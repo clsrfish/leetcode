@@ -38,7 +38,7 @@ int main(int argc, char const *argv[])
         {leetcode_0015::key, leetcode_0015::main},
     };
 
-    string lckey = "0001";
+    string lckey = "0015";
     if (argc > 1)
     {
         string input = string(argv[1]);
