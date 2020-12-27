@@ -1,12 +1,11 @@
 /**
- * 整数转罗马数字   
+ * 整数转罗马数字
  */
 #include <iostream>
 #include <string>
 #include <vector>
 using namespace std;
-namespace leetcode_0012
-{
+namespace leetcode_0012 {
 string key = "0012";
 // Symbol       Value
 // I             1
@@ -16,11 +15,9 @@ string key = "0012";
 // C             100
 // D             500
 // M             1000
-class Solution
-{
-public:
-    string intToRoman(int num)
-    {
+class Solution {
+   public:
+    string intToRoman(int num) {
         // 1000
         string result = convert(1000, num, 'M', 'D', 'C');
         num = num % 1000;
@@ -35,32 +32,21 @@ public:
         return result;
     }
 
-private:
-    string convert(int threshold, int num, char up, char mid, char low)
-    {
+   private:
+    string convert(int threshold, int num, char up, char mid, char low) {
         string result = "";
         int c = num / threshold;
-        if (threshold == 1000)
-        {
+        if (threshold == 1000) {
             result.append(string(c, up));
-        }
-        else
-        {
-            if (c == 9)
-            {
+        } else {
+            if (c == 9) {
                 result = result + low + up;
-            }
-            else if (c <= 3)
-            {
+            } else if (c <= 3) {
                 result.append(string(c, low));
-            }
-            else if (c >= 5)
-            {
+            } else if (c >= 5) {
                 result += mid;
                 result.append(string(c - 5, low));
-            }
-            else
-            {
+            } else {
                 result.append(string(5 - c, low));
                 result += mid;
             }
@@ -68,8 +54,7 @@ private:
         return result;
     }
 };
-int main()
-{
+int main() {
     std::cout << key << ":整数转罗马数字" << std::endl;
     int num = 1994;
     Solution solution;
@@ -78,4 +63,4 @@ int main()
     return 0;
 }
 
-} // namespace leetcode_0012
+}  // namespace leetcode_0012

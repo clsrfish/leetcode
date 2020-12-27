@@ -1,31 +1,26 @@
 /**
- * 最长回文子串 
+ * 最长回文子串
  */
 #include <iostream>
 #include <string>
 #include <vector>
 // #include <algorithm>
 using namespace std;
-namespace leetcode_0005
-{
+namespace leetcode_0005 {
 string key = "0005";
-class Solution
-{
-public:
-    string longestPalindrome(string s)
-    {
+class Solution {
+   public:
+    string longestPalindrome(string s) {
         int length = s.length();
         string result = "";
-        for (int i = 0; i < length; i++)
-        {
+        for (int i = 0; i < length; i++) {
             // single
             int max_target_step = min(i, length - 1 - i);
 
             longestIntermediatePalindrome(s, length, &result, max_target_step, i, i);
 
             // double
-            if (i + 1 == length)
-            {
+            if (i + 1 == length) {
                 return result;
             }
             max_target_step = min(i, length - 1 - (i + 1));
@@ -34,23 +29,17 @@ public:
         return result;
     }
 
-private:
-    void longestIntermediatePalindrome(string s, int length, string *result, int max_target_step, int m, int n)
-    {
-
+   private:
+    void longestIntermediatePalindrome(string s, int length, string *result, int max_target_step, int m, int n) {
         int max_length = max_target_step * 2 + n - m + 1;
-        if ((*result).length() > max_length)
-        {
+        if ((*result).length() > max_length) {
             return;
         }
         int step = 0;
-        while (step <= max_target_step)
-        {
-            if (s.at(m - step) != s.at(n + step))
-            {
+        while (step <= max_target_step) {
+            if (s.at(m - step) != s.at(n + step)) {
                 int tmp = (step - 1) * 2 + n - m + 1;
-                if (tmp > (*result).length())
-                {
+                if (tmp > (*result).length()) {
                     *result = s.substr(m - step + 1, tmp);
                 }
                 return;
@@ -61,17 +50,15 @@ private:
     }
 };
 
-int main()
-{
+int main() {
     std::cout << key << ":最长回文子串" << std::endl;
     vector<string> strs;
     strs.push_back("babad");
     strs.push_back("cbbd");
     strs.push_back("a");
-    for (int i = 0; i < strs.size(); i++)
-    {
+    for (int i = 0; i < strs.size(); i++) {
         cout << Solution().longestPalindrome(strs.at(i)) << endl;
     }
     return 0;
 }
-} // namespace leetcode_0005
+}  // namespace leetcode_0005

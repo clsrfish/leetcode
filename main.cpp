@@ -1,5 +1,6 @@
 #include <iostream>
 #include <map>
+
 #include "./src/0001.cpp"
 #include "./src/0002.cpp"
 #include "./src/0003.cpp"
@@ -16,40 +17,43 @@
 #include "./src/0014.cpp"
 #include "./src/0015.cpp"
 #include "./src/0016.cpp"
-using namespace std;
 
-int main(int argc, char const *argv[])
-{
+#define PROBLEM(NS) \
+    { NS::key, NS::main }
 
-    map<string, int (*)()> leetcodes{
-        {leetcode_0001::key, leetcode_0001::main},
-        {leetcode_0002::key, leetcode_0002::main},
-        {leetcode_0003::key, leetcode_0003::main},
-        {leetcode_0004::key, leetcode_0004::main},
-        {leetcode_0005::key, leetcode_0005::main},
-        {leetcode_0006::key, leetcode_0006::main},
-        {leetcode_0007::key, leetcode_0007::main},
-        {leetcode_0008::key, leetcode_0008::main},
-        {leetcode_0009::key, leetcode_0009::main},
-        {leetcode_0010::key, leetcode_0010::main},
-        {leetcode_0011::key, leetcode_0011::main},
-        {leetcode_0012::key, leetcode_0012::main},
-        {leetcode_0013::key, leetcode_0013::main},
-        {leetcode_0014::key, leetcode_0014::main},
-        {leetcode_0015::key, leetcode_0015::main},
-        {leetcode_0016::key, leetcode_0016::main},
+/**
+ * @brief
+ *
+ * @param argc
+ * @param argv
+ * @return int
+ */
+int main(int argc, char const *argv[]) {
+    std::map<string, int (*)()> leetcodes{
+        PROBLEM(leetcode_0001),
+        PROBLEM(leetcode_0002),
+        PROBLEM(leetcode_0003),
+        PROBLEM(leetcode_0004),
+        PROBLEM(leetcode_0005),
+        PROBLEM(leetcode_0006),
+        PROBLEM(leetcode_0007),
+        PROBLEM(leetcode_0008),
+        PROBLEM(leetcode_0009),
+        PROBLEM(leetcode_0010),
+        PROBLEM(leetcode_0011),
+        PROBLEM(leetcode_0012),
+        PROBLEM(leetcode_0013),
+        PROBLEM(leetcode_0014),
+        PROBLEM(leetcode_0015),
+        PROBLEM(leetcode_0016),
     };
 
-    string lckey = "0016";
-    if (argc > 1)
-    {
-        string input = string(argv[1]);
-        if (leetcodes.count(input) > 0)
-        {
+    std::string lckey = "0016";
+    if (argc > 1) {
+        std::string input = std::string(argv[1]);
+        if (leetcodes.count(input) > 0) {
             lckey = input;
-        }
-        else
-        {
+        } else {
             std::cout << "invalid input:" << input << ", running " << lckey << " instead" << std::endl;
         }
     }

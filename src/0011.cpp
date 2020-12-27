@@ -1,38 +1,30 @@
 /**
- * 盛最多水的容器  
+ * 盛最多水的容器
  */
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
-namespace leetcode_0011
-{
+namespace leetcode_0011 {
 string key = "0011";
-class Solution
-{
-public:
-    int maxArea(vector<int> &height)
-    {
+class Solution {
+   public:
+    int maxArea(vector<int> &height) {
         vector<int>::iterator head = height.begin();
         vector<int>::iterator tail = height.end();
         --tail;
         int w = height.size() - 1;
         int maxS = 0;
-        while (head != tail)
-        {
+        while (head != tail) {
             int h = min(*head, *tail);
             int s = h * w;
-            if (maxS < s)
-            {
+            if (maxS < s) {
                 maxS = s;
             }
-            if (h == *head)
-            {
+            if (h == *head) {
                 ++head;
-            }
-            else
-            {
+            } else {
                 --tail;
             }
             --w;
@@ -41,8 +33,7 @@ public:
     }
 };
 
-int main()
-{
+int main() {
     std::cout << key << ":盛最多水的容器" << std::endl;
     vector<int> height;
     height.push_back(1);
@@ -60,4 +51,4 @@ int main()
     cout << "max area: " << s << endl;
     return 0;
 }
-} // namespace leetcode_0011
+}  // namespace leetcode_0011
