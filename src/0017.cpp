@@ -32,6 +32,9 @@ class Solution {
    public:
     std::vector<std::string> letterCombinations(const std::string& digits) {
         std::vector<std::string> result;
+        if(digits.length() == 0){
+            return result;
+        }
         std::vector<char> path;
         backtrace(digits, path, result);
         return result;
@@ -40,7 +43,9 @@ class Solution {
     void backtrace(const std::string& digits, std::vector<char>& path, std::vector<std::string>& result) {
         size_t index = path.size();
         if (index == digits.size()) {
+            path.push_back('\0');
             result.push_back(std::string(path.data()));
+            path.pop_back();
             return;
         }
 
