@@ -18,6 +18,7 @@
 #include "./src/0015.cpp"
 #include "./src/0016.cpp"
 #include "./src/0017.cpp"
+#include "./src/0018.cpp"
 
 #define PROBLEM(NS) \
     { NS::key, NS::main }
@@ -48,9 +49,10 @@ int main(int argc, char const *argv[]) {
         PROBLEM(leetcode_0015),
         PROBLEM(leetcode_0016),
         PROBLEM(leetcode_0017),
+        PROBLEM(leetcode_0018),
     };
 
-    std::string lckey = "0017";
+    std::string lckey = "0018";
     if (argc > 1) {
         std::string input = std::string(argv[1]);
         if (leetcodes.count(input) > 0) {
