@@ -14,8 +14,8 @@
 namespace leetcode_0016 {
 std::string key = "0016";
 class Solution {
-   public:
-    int threeSumClosest(std::vector<int> &nums, int target) {
+  public:
+    int threeSumClosest(std::vector<int>& nums, int target) {
         std::sort(nums.begin(), nums.end());
         int sum = 1e5;
 
@@ -49,4 +49,4 @@ int main() {
     std::cout << "result:" << result << " expected:" << expected << std::endl;
     return 0;
 }
-}  // namespace leetcode_0016
+} // namespace leetcode_0016

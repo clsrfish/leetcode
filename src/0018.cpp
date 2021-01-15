@@ -15,12 +15,28 @@
 namespace leetcode_0018 {
 std::string key = "0018";
 class Solution {
-   public:
-    std::vector<std::vector<int>> fourSum(std::vector<int> &nums, int target) {
+public:
+  std::vector<std::vector<int>> fourSum(std::vector<int> &nums, int target) {
+    return nSum(nums, target, 4);
+  }
+
+private:
+  std::vector<std::vector<int>> nSum(std::vector<int> &nums, int target,
+                                     int n) {
+    if (n == 2) {
+      return twoSum(nums, target);
+    } else {
+
+      return twoSum(nums, target);
     }
+  }
+
+  std::vector<std::vector<int>> twoSum(std::vector<int> &nums, int target) {
+    return std::vector<std::vector<int>>();
+  }
 };
 int main() {
-    std::cout << key << ":四数之和" << std::endl;
-    return 0;
+  std::cout << key << ":四数之和" << std::endl;
+  return 0;
 }
-}  // namespace leetcode_0018
+} // namespace leetcode_0018
