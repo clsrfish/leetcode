@@ -32,6 +32,7 @@
  * @return int
  */
 int main(int argc, char const *argv[]) {
+
   std::map<std::string, int (*)()> leetcodes{
       PROBLEM(leetcode_0001), PROBLEM(leetcode_0002), PROBLEM(leetcode_0003),
       PROBLEM(leetcode_0004), PROBLEM(leetcode_0005), PROBLEM(leetcode_0006),

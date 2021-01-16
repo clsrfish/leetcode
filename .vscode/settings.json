@@ -1,8 +1,4 @@
 {
-    "C_Cpp.autocomplete": "Disabled",
-    "C_Cpp.errorSquiggles": "Disabled",
-    "C_Cpp.formatting": "Disabled",
-    "C_Cpp.intelliSenseEngine": "Disabled",
     "files.associations": {
         "__bit_reference": "cpp",
         "__config": "cpp",
