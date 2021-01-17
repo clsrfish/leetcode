@@ -1,5 +1,8 @@
 {
     "files.associations": {
+        "*.h.in": "plaintext",
+        "*.ttml": "xml",
+        "*.ttss": "css",
         "__bit_reference": "cpp",
         "__config": "cpp",
         "__cxx_version": "cpp",
@@ -64,6 +67,10 @@
         "typeinfo": "cpp",
         "unordered_map": "cpp",
         "utility": "cpp",
-        "vector": "cpp"
-    }
+        "vector": "cpp",
+        "stack": "cpp"
+    },
+    "C_Cpp.autocomplete": "Disabled",
+    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.intelliSenseEngine": "Disabled"
 }

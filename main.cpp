@@ -21,8 +21,9 @@
 #include "./src/0017.cpp"
 #include "./src/0018.cpp"
 #include "./src/0019.cpp"
+#include "./src/0020.cpp"
 
-#define PROBLEM(NS)                                                            \
+#define PROBLEM(NS) \
   { NS::key, NS::main }
 
 /**
@@ -35,16 +36,29 @@
 int main(int argc, char const *argv[]) {
 
   std::map<std::string, int (*)()> leetcodes{
-      PROBLEM(leetcode_0001), PROBLEM(leetcode_0002), PROBLEM(leetcode_0003),
-      PROBLEM(leetcode_0004), PROBLEM(leetcode_0005), PROBLEM(leetcode_0006),
-      PROBLEM(leetcode_0007), PROBLEM(leetcode_0008), PROBLEM(leetcode_0009),
-      PROBLEM(leetcode_0010), PROBLEM(leetcode_0011), PROBLEM(leetcode_0012),
-      PROBLEM(leetcode_0013), PROBLEM(leetcode_0014), PROBLEM(leetcode_0015),
-      PROBLEM(leetcode_0016), PROBLEM(leetcode_0017), PROBLEM(leetcode_0018),
+      PROBLEM(leetcode_0001),
+      PROBLEM(leetcode_0002),
+      PROBLEM(leetcode_0003),
+      PROBLEM(leetcode_0004),
+      PROBLEM(leetcode_0005),
+      PROBLEM(leetcode_0006),
+      PROBLEM(leetcode_0007),
+      PROBLEM(leetcode_0008),
+      PROBLEM(leetcode_0009),
+      PROBLEM(leetcode_0010),
+      PROBLEM(leetcode_0011),
+      PROBLEM(leetcode_0012),
+      PROBLEM(leetcode_0013),
+      PROBLEM(leetcode_0014),
+      PROBLEM(leetcode_0015),
+      PROBLEM(leetcode_0016),
+      PROBLEM(leetcode_0017),
+      PROBLEM(leetcode_0018),
       PROBLEM(leetcode_0019),
+      PROBLEM(leetcode_0020),
   };
 
-  std::string lckey = "0019";
+  std::string lckey = "0020";
   if (argc > 1) {
     std::string input = std::string(argv[1]);
     if (leetcodes.count(input) > 0) {
