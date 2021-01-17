@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <iostream>
 #include <map>
 #include <string>
@@ -22,6 +23,7 @@
 #include "./src/0018.cpp"
 #include "./src/0019.cpp"
 #include "./src/0020.cpp"
+#include "./src/0021.cpp"
 
 #define PROBLEM(NS) \
   { NS::key, NS::main }
@@ -56,9 +58,10 @@ int main(int argc, char const *argv[]) {
       PROBLEM(leetcode_0018),
       PROBLEM(leetcode_0019),
       PROBLEM(leetcode_0020),
+      PROBLEM(leetcode_0021),
   };
 
-  std::string lckey = "0020";
+  std::string lckey = "0021";
   if (argc > 1) {
     std::string input = std::string(argv[1]);
     if (leetcodes.count(input) > 0) {
@@ -69,7 +72,7 @@ int main(int argc, char const *argv[]) {
     }
   }
 
-  std::cout << "running:" << lckey << std::endl;
+  std::cout << atoi(lckey.c_str()) << " selected" << std::endl;
   leetcodes[lckey]();
   return 0;
 }

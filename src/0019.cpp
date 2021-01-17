@@ -12,18 +12,9 @@
 #include <iostream>
 #include <vector>
 
+#include "./model/list_node.hpp"
 namespace leetcode_0019 {
 std::string key = "0019";
-
-// Definition for singly-linked list.
-struct ListNode {
-  int val;
-  ListNode *next;
-  ListNode() : val(0), next(nullptr) {}
-  ListNode(int x) : val(x), next(nullptr) {}
-  ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
-
 class Solution {
 public:
   ListNode *removeNthFromEnd(ListNode *head, int n) {

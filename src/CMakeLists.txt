@@ -1,3 +1,8 @@
-aux_source_directory(. DIR_LIB_SRC)
+# add_subdirectory(model)
+add_subdirectory(utils)
 
-add_library (LibSrc ${DIR_LIB_SRC})
+aux_source_directory(. SRC)
+
+add_library (src ${SRC})
+
+target_link_libraries(src utils)

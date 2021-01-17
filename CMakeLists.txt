@@ -17,9 +17,9 @@ link_directories(
 )
 
 add_subdirectory(src)
-aux_source_directory(. DIR_SRCS)
-add_executable(Main ${DIR_SRCS})
-target_link_libraries(Main LibSrc)
+aux_source_directory(. SRCS)
+add_executable(${PROJECT_NAME} ${SRCS})
+target_link_libraries(${PROJECT_NAME} src)
 
 # Test case
 include(CTest)
