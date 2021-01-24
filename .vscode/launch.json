@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(lldb) Launch",
+            "name": "CMake - Build and launch debuging(lldb)",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/main",
@@ -14,8 +14,14 @@
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
-            "MIMode": "lldb",
-            "preLaunchTask": "build"
+            "logging": {
+                "moduleLoad": true,
+                "trace": true
+            },
+            "osx": {
+                "MIMode": "lldb"
+            },
+            "preLaunchTask": "C/C++: make"
         }
     ]
 }

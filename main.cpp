@@ -26,7 +26,11 @@
 #include "./src/0021.cpp"
 #include "./src/0022.cpp"
 
-#define PROBLEM(NS)                                                                                                    \
+#define MAX()        \
+  std::cout << "asd" \
+            << "hah" << std::endl;
+
+#define PROBLEM(NS) \
   { NS::key, NS::main }
 
 /**

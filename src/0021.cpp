@@ -70,10 +70,9 @@ int main() {
   std::cout << key << ": 合并两个有序链表" << std::endl;
 #define _TEST_CASE_TYPE std::vector<int>, std::vector<int>, std::vector<int>
 
-  std::vector<std::tuple<_TEST_CASE_TYPE>>
-      test_cases = {
-          std::make_tuple<_TEST_CASE_TYPE>({1, 2, 4}, {1, 3, 4}, {1, 1, 2, 3, 4, 4}),
-      };
+  std::vector<std::tuple<_TEST_CASE_TYPE>> test_cases = {
+      std::make_tuple<_TEST_CASE_TYPE>({1, 2, 4}, {1, 3, 4}, {1, 1, 2, 3, 4, 4}),
+  };
   for (auto &&entry : test_cases) {
     auto input1 = std::get<0>(entry);
     auto input2 = std::get<1>(entry);
@@ -106,10 +105,8 @@ int main() {
       output = output->next;
     }
 
-    std::cout << "l1:" << int_vector2str(input1)
-              << " l2:" << int_vector2str(input2)
-              << " expected:" << int_vector2str(expected)
-              << " output:" << int_vector2str(output_v) << std::endl;
+    std::cout << "l1:" << vector2str(input1) << " l2:" << vector2str(input2) << " expected:" << vector2str(expected)
+              << " output:" << vector2str(output_v) << std::endl;
   }
 
   return 0;
