@@ -25,6 +25,7 @@
 #include "./src/0020.cpp"
 #include "./src/0021.cpp"
 #include "./src/0022.cpp"
+#include "./src/0023.cpp"
 
 #define MAX()        \
   std::cout << "asd" \
@@ -47,10 +48,10 @@ int main(int argc, char const *argv[]) {
       PROBLEM(leetcode_0009), PROBLEM(leetcode_0010), PROBLEM(leetcode_0011), PROBLEM(leetcode_0012),
       PROBLEM(leetcode_0013), PROBLEM(leetcode_0014), PROBLEM(leetcode_0015), PROBLEM(leetcode_0016),
       PROBLEM(leetcode_0017), PROBLEM(leetcode_0018), PROBLEM(leetcode_0019), PROBLEM(leetcode_0020),
-      PROBLEM(leetcode_0021), PROBLEM(leetcode_0022),
+      PROBLEM(leetcode_0021), PROBLEM(leetcode_0022), PROBLEM(leetcode_0023),
   };
 
-  std::string lckey = "0022";
+  std::string lckey = "0023";
   if (argc > 1) {
     std::string input = std::string(argv[1]);
     if (leetcodes.count(input) > 0) {
