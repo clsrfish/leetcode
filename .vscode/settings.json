@@ -71,5 +71,6 @@
         "stack": "cpp",
         "deque": "cpp",
         "queue": "cpp"
-    }
+    },
+    "editor.tabSize": 2
 }
