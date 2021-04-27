@@ -8,6 +8,8 @@
  * @copyright Copyright (c) 2021
  *
  */
+#if !defined(TREE_NODE_H)
+#define TREE_NODE_H
 
 struct TreeNode {
   int val;
@@ -20,3 +22,5 @@ struct TreeNode {
   TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {
   }
 };
+
+#endif // TREE_NODE_H
