@@ -10,17 +10,24 @@
  */
 #if !defined(STL_UTILS_H)
 #define STL_UTILS_H
+#include <algorithm>
 #include <sstream>
 #include <string>
 #include <vector>
 
 template <class T>
-std::string vector2str(const std::vector<T> &v) {
+std::string vector2str(const std::vector<T> &v, int len = -1) {
   std::stringstream ss;
+  if (len < 0) {
+    len = v.size();
+  }
+  int vSize = v.size();
+  len = std::min(len, vSize);
+
   ss << "[";
-  for (size_t i = 0; i < v.size(); i++) {
+  for (size_t i = 0; i < len; i++) {
     ss << v[i];
-    if (i != v.size() - 1) {
+    if (i != len - 1) {
       ss << ", ";
     }
   }
