@@ -8,10 +8,9 @@
             "label": "C/C++: cmake debug build",
             "command": "cmake",
             "args": [
-                // "-g",
-                "-Wdev",
-                "--log-level=VERBOSE",
+                "--log-level=DEBUG",
                 "-DCMAKE_BUILD_TYPE=Debug",
+                "-DLEETCODE_PROBLEM=28",
                 "--graphviz=dependencies.dot",
                 ".."
             ],

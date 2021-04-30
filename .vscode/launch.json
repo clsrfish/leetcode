@@ -8,8 +8,12 @@
             "name": "CMake - Build and launch debuging(lldb)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/main",
-            "args": [],
+            "program": "${workspaceFolder}/build/leetcode",
+            "args": [
+                // cause debugger not able to attach
+                // "--gtest_list_tests",
+                // "--gtest_output=xml:${workspaceFolder}/build/gtest_list.xml"
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

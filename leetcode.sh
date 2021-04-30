@@ -1,6 +1,11 @@
 #!/bin/bash
 
-program=main
+leetcode=${1}
+if [ -z "${leetcode}" ]; then
+    leetcode="ALL"
+fi
+
+program=leetcode
 if [ ! -d build ]; then
     echo "-- Build directory not exists"
 fi
@@ -8,7 +13,10 @@ if [ -f ./build/${program} ]; then
     rm ./build/${program}
 fi
 
-cmake --log-level=VERBOSE -Wdev -DCMAKE_BUILD_TYPE=Debug -S . -B build
+cmake --log-level=DEBUG -Wdev -DCMAKE_BUILD_TYPE=Debug -DLEETCODE_PROBLEM="${leetcode}" -S . -B build
+if [ $? != 0 ]; then
+    exit $?
+fi
 
 if [ $(uname) == "Linux" ]; then
     cpu_core=$(nproc)
@@ -20,10 +28,11 @@ else
 fi
 echo "-- CPU core: $cpu_core"
 
-make -d -j${cpu_core} -C build
+make -j${cpu_core} -C build
 
 otool -L build/${program}
 
-echo "-- Launching main"
-
-./build/${program}
+if [ -x ./build/${program} ]; then
+    echo "-- Run tests"
+    ./build/${program}
+fi

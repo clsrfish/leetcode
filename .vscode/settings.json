@@ -70,7 +70,14 @@
         "vector": "cpp",
         "stack": "cpp",
         "deque": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "clocale": "cpp",
+        "forward_list": "cpp",
+        "iomanip": "cpp",
+        "list": "cpp",
+        "set": "cpp",
+        "unordered_set": "cpp"
     },
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "testMate.cpp.test.executables": "{build,Build,BUILD,out,Out,OUT}/**/*{test,Test,TEST,leetcode}*"
 }

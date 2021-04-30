@@ -11,8 +11,7 @@
 #include <iostream>
 #include <string>
 
-namespace leetcode_0028 {
-std::string key = "0028";
+namespace leetcode_28 {
 class Solution {
  public:
   int strStr(std::string haystack, std::string needle) {
@@ -38,12 +37,4 @@ class Solution {
     return -1;
   }
 };
-
-int main() {
-  std::cout << key << ": 实现 strStr" << std::endl;
-  std::string haystack = "a", needle = "a";
-  int index = Solution().strStr(haystack, needle);
-  std::cout << index << std::endl;
-  return 0;
-}
-}  // namespace leetcode_0028
+}  // namespace leetcode_28

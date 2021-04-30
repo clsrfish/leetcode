@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(main VERSION 0.0.1)
+project(leetcode VERSION 0.0.1)
+include("ColoriedMessage.cmake")
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -22,13 +23,51 @@ link_directories(
 )
 
 add_subdirectory(src)
-aux_source_directory(. SRCS)
-add_executable(${PROJECT_NAME} ${SRCS})
-target_link_libraries(${PROJECT_NAME} src)
+# aux_source_directory(. SRCS)
+# target_link_libraries(${PROJECT_NAME} src)
 
 # Test case
-include(CTest)
 enable_testing()
+
+# gtest configurations
+include(FetchContent)
+FetchContent_Declare(
+    gtest
+    GIT_REPOSITORY https://github.com/google/googletest.git
+    GIT_TAG release-1.10.0
+)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_GetProperties(gtest)
+if(NOT gtest_POPULATED)
+    FetchContent_Populate(gtest)
+    # message(${gtest_SOURCE_DIR} ${gtest_BINARY_DIR})
+    add_subdirectory(${gtest_SOURCE_DIR} ${gtest_BINARY_DIR})
+endif()
+
+# test cases
+set(LEETCODE_PROBLEM "ALL" CACHE STRING "Choose the problem to run, all problems will be build if not specified or not found.")
+set(LEETCODE_PROBLEM_FINAL "ALL")
+if(NOT ${LEETCODE_PROBLEM} STREQUAL "ALL")
+    set(TEST_SUITE_SRC ${CMAKE_CURRENT_SOURCE_DIR}/test/${LEETCODE_PROBLEM}_test.cpp)
+    if(EXISTS ${TEST_SUITE_SRC})
+        set(LEETCODE_PROBLEM_FINAL ${TEST_SUITE_SRC})
+    else()
+        message(FATAL_ERROR "Leetcode[" ${LEETCODE_PROBLEM} "] not found, plz check your code")
+    endif()
+endif()
+
+if(${LEETCODE_PROBLEM_FINAL} STREQUAL "ALL")
+    message(STATUS "Building all leetcode problems.")
+    aux_source_directory(./test TEST_SUIT_SRCS)
+    add_executable(${PROJECT_NAME} ${TEST_SUIT_SRCS})
+else()
+    message(STATUS "Building leetcode[" ${LEETCODE_PROBLEM} "]")
+    add_executable(${PROJECT_NAME} ${LEETCODE_PROBLEM_FINAL})
+endif()
+
+target_link_libraries(${PROJECT_NAME} PRIVATE src gtest_main)
+include(GoogleTest)
+gtest_discover_tests(${PROJECT_NAME})
 
 # build package installer start
 include (InstallRequiredSystemLibraries)
