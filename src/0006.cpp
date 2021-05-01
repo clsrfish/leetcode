@@ -9,7 +9,7 @@ using namespace std;
 namespace leetcode_0006 {
 string key = "0006";
 class Solution {
-public:
+ public:
   string convert(string s, int numRows) {
     if (numRows <= 1) {
       return s;
@@ -20,9 +20,7 @@ public:
     for (int r = 0; r < numRows; r++) {
       int c = 0;
       while (true) {
-        int index = (c / 2 * (2 * numRows - 2)) +
-                    ((c + 1) % 2 == 0 ? (2 * numRows - r - 1) : (r + 1));
-        int indexTmp = 0;
+        int index = (c / 2 * (2 * numRows - 2)) + ((c + 1) % 2 == 0 ? (2 * numRows - r - 1) : (r + 1));
         if (index > length) {
           break;
         } else {
@@ -45,10 +43,9 @@ int main() {
   auto iter = table.begin();
 
   while (iter != table.end()) {
-    cout << Solution().convert(input, (*iter).first).compare((*iter).second)
-         << endl;
+    cout << Solution().convert(input, (*iter).first).compare((*iter).second) << endl;
     ++iter;
   }
   return 0;
 }
-} // namespace leetcode_0006
+}  // namespace leetcode_0006

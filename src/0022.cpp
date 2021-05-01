@@ -67,7 +67,6 @@ int main() {
                           "()()",
                       }),
   };
-  int n = 2;
   for (auto &&entry : test_cases) {
     int n = std::get<0>(entry);
     std::vector<std::string> expected = std::get<1>(entry);
