@@ -1,18 +1,22 @@
 /**
- * 两数相加
+ * @file 2.cpp
+ * @author clsrfish (clsrfish@gmail.com)
+ * @brief 两数相加 https://leetcode-cn.com/problems/add-two-numbers
+ * @version 0.1
+ * @date 2021-05-01
+ *
+ * @copyright Copyright (c) 2021
+ *
  */
 #include <iostream>
+
+#include "./model/list_node.hpp"
+
 using namespace std;
-namespace leetcode_0002 {
-string key = "0002";
-struct ListNode {
-  int val;
-  ListNode *next;
-  ListNode(int x) : val(x), next(nullptr) {}
-};
+namespace leetcode_2 {
 
 class Solution {
-public:
+ public:
   ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
     int sum = 0;
     ListNode *result = nullptr, *p = nullptr;
@@ -39,22 +43,5 @@ public:
     return result;
   }
 };
-int main() {
-  std::cout << key << ":两数相加" << std::endl;
-  ListNode *l1 = new ListNode(2);
-  l1->next = new ListNode(4);
-  l1->next->next = new ListNode(3);
-  ListNode *l2 = new ListNode(5);
-  l2->next = new ListNode(6);
-  l2->next->next = new ListNode(4);
-  ListNode *result = Solution().addTwoNumbers(l1, l2);
 
-  while (result != nullptr) {
-    cout << result->val;
-    result = result->next;
-  }
-  cout << endl;
-  return 0;
-}
-
-} // namespace leetcode_0002
+}  // namespace leetcode_2

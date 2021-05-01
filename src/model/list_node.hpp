@@ -29,41 +29,28 @@ struct ListNode {
  * @param inputs
  * @return ListNode*
  */
-ListNode *createListNodesFromVec(const std::vector<int> &inputs) {
-  if (inputs.empty()) {
-    return nullptr;
-  }
+ListNode *createListNodesFromVec(const std::vector<int> &inputs);
 
-  ListNode *head = nullptr;
-  ListNode *node = nullptr;
+/**
+ * @brief Convert List Nodes to vector.
+ *
+ * @param list
+ * @return std::vector<int>
+ */
+std::vector<int> listNodes2Vec(ListNode *list);
 
-  for (auto &&i : inputs) {
-    if (head == nullptr) {
-      head = new ListNode(i);
-      node = head;
-    } else {
-      node->next = new ListNode(i);
-      node = node->next;
-    }
-  }
-  return head;
-}
+/**
+ * @brief Free List Nodes.
+ *
+ * @param list
+ */
+void freeListNodes(ListNode *list);
 
 /**
  * @brief print List string.
  *
  * @param node
  */
-void printListNodes(const ListNode *node) {
-  std::cout << '[';
-  while (node != nullptr) {
-    std::cout << node->val;
-    node = node->next;
-    if (node != nullptr) {
-      std::cout << ", ";
-    }
-  }
-  std::cout << ']' << std::endl;
-}
+void printListNodes(const ListNode *node);
 
 #endif

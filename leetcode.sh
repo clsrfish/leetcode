@@ -1,8 +1,8 @@
 #!/bin/bash
 
-leetcode=${1}
-if [ -z "${leetcode}" ]; then
-    leetcode="ALL"
+problem=${1}
+if [ -z "${problem}" ]; then
+    problem="ALL"
 fi
 
 program=leetcode
@@ -13,7 +13,7 @@ if [ -f ./build/${program} ]; then
     rm ./build/${program}
 fi
 
-cmake --log-level=DEBUG -Wdev -DCMAKE_BUILD_TYPE=Debug -DLEETCODE_PROBLEM="${leetcode}" -S . -B build
+cmake --log-level=DEBUG -Wdev -DCMAKE_BUILD_TYPE=Debug -DLEETCODE_PROBLEM="${problem}" -S . -B build
 if [ $? != 0 ]; then
     exit $?
 fi
@@ -29,10 +29,12 @@ fi
 echo "-- CPU core: $cpu_core"
 
 make -j${cpu_core} -C build
-
-otool -L build/${program}
+if [ $? != 0 ]; then
+    exit $?
+fi
 
 if [ -x ./build/${program} ]; then
-    echo "-- Run tests"
+    otool -L build/${program}
+    echo "-- Run leetcode"
     ./build/${program}
 fi

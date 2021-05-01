@@ -3,9 +3,6 @@
 #include <map>
 #include <string>
 
-#include "./src/0001.cpp"
-#include "./src/0002.cpp"
-#include "./src/0003.cpp"
 #include "./src/0004.cpp"
 #include "./src/0005.cpp"
 #include "./src/0006.cpp"
@@ -50,14 +47,13 @@
  */
 int main(int argc, char const *argv[]) {
   std::map<std::string, int (*)()> leetcodes{
-      PROBLEM(leetcode_0001), PROBLEM(leetcode_0002), PROBLEM(leetcode_0003), PROBLEM(leetcode_0004),
-      PROBLEM(leetcode_0005), PROBLEM(leetcode_0006), PROBLEM(leetcode_0007), PROBLEM(leetcode_0008),
-      PROBLEM(leetcode_0009), PROBLEM(leetcode_0010), PROBLEM(leetcode_0011), PROBLEM(leetcode_0012),
-      PROBLEM(leetcode_0013), PROBLEM(leetcode_0014), PROBLEM(leetcode_0015), PROBLEM(leetcode_0016),
-      PROBLEM(leetcode_0017), PROBLEM(leetcode_0018), PROBLEM(leetcode_0019), PROBLEM(leetcode_0020),
-      PROBLEM(leetcode_0021), PROBLEM(leetcode_0022), PROBLEM(leetcode_0023), PROBLEM(leetcode_0024),
-      PROBLEM(leetcode_0025), PROBLEM(leetcode_0026), PROBLEM(leetcode_0027), PROBLEM(leetcode_0094),
-      PROBLEM(leetcode_0144), PROBLEM(leetcode_0145),
+      PROBLEM(leetcode_0004), PROBLEM(leetcode_0005), PROBLEM(leetcode_0006), PROBLEM(leetcode_0007),
+      PROBLEM(leetcode_0008), PROBLEM(leetcode_0009), PROBLEM(leetcode_0010), PROBLEM(leetcode_0011),
+      PROBLEM(leetcode_0012), PROBLEM(leetcode_0013), PROBLEM(leetcode_0014), PROBLEM(leetcode_0015),
+      PROBLEM(leetcode_0016), PROBLEM(leetcode_0017), PROBLEM(leetcode_0018), PROBLEM(leetcode_0019),
+      PROBLEM(leetcode_0020), PROBLEM(leetcode_0021), PROBLEM(leetcode_0022), PROBLEM(leetcode_0023),
+      PROBLEM(leetcode_0024), PROBLEM(leetcode_0025), PROBLEM(leetcode_0026), PROBLEM(leetcode_0027),
+      PROBLEM(leetcode_0094), PROBLEM(leetcode_0144), PROBLEM(leetcode_0145),
   };
 
   std::string lckey = "0028";

@@ -7,10 +7,9 @@
 #include <vector>
 using namespace std;
 
-namespace leetcode_0001 {
-string key = "0001";
+namespace leetcode_1 {
 class Solution {
-public:
+ public:
   vector<int> twoSum(vector<int> &nums, int target) {
     vector<int> result;
     map<int, int> bucket;
@@ -29,18 +28,5 @@ public:
     return result;
   }
 };
-int main() {
-  std::cout << key << ":两数之和" << std::endl;
-  vector<int> nums;
-  nums.push_back(2);
-  nums.push_back(7);
-  nums.push_back(11);
-  nums.push_back(15);
-  int target = 9;
-  vector<int> &ref = nums;
-  auto result = Solution().twoSum(ref, target);
-  cout << result.at(0) << " " << result.at(1) << endl;
-  return 0;
-}
 
-} // namespace leetcode_0001
+}  // namespace leetcode_1

@@ -1,5 +1,12 @@
 /**
- * 无重复字符的最长子串
+ * @file 3.cpp
+ * @author clsrfish (clsrfish@gmail.com)
+ * @brief 无重复字符的最长子串
+ * @version 0.1
+ * @date 2021-05-01
+ *
+ * @copyright Copyright (c) 2021
+ *
  */
 #include <array>
 #include <iostream>
@@ -7,10 +14,10 @@
 #include <string>
 #include <vector>
 using namespace std;
-namespace leetcode_0003 {
-string key = "0003";
-class Solution1 {
-public:
+namespace leetcode_3 {
+
+class Solution {
+ public:
   int lengthOfLongestSubstring(string s) {
     if (s.length() <= 1) {
       return s.length();
@@ -21,8 +28,7 @@ public:
     for (int i = 0; i < s.length(); i++) {
       char c = s.at(i);
       map<char, int>::iterator find = marks.find(c);
-      if (find != marks.end() &&
-          (*find).second != -1) // found repeated character
+      if (find != marks.end() && (*find).second != -1)  // found repeated character
       {
         int tmp = i - start;
         max = max > tmp ? max : tmp;
@@ -48,7 +54,7 @@ public:
   }
 };
 class Solution2 {
-public:
+ public:
   int lengthOfLongestSubstring(string s) {
     int len = s.length();
     if (len <= 1) {
@@ -61,10 +67,9 @@ public:
     for (int i = 1; i < len; ++i) {
       const char c = s.at(i);
       int redundant_pos = s.rfind(c, i - 1);
-      if (redundant_pos == string::npos ||
-          redundant_pos < start_pos) { // no repeat
+      if (redundant_pos == string::npos || redundant_pos < start_pos) {  // no repeat
         ++max_tmp;
-      } else if (redundant_pos >= start_pos) { // repeat
+      } else if (redundant_pos >= start_pos) {  // repeat
         max = max > max_tmp ? max : max_tmp;
         start_pos = redundant_pos + 1;
         max_tmp = i - redundant_pos;
@@ -73,18 +78,5 @@ public:
     return max >= max_tmp ? max : max_tmp;
   }
 };
-int main() {
-  std::cout << key << ":无重复字符的最长子串" << std::endl;
-  vector<string> strs;
-  // strs.push_back("abcabcbb");
-  // strs.push_back("bbbbb");
-  // strs.push_back("pwwkew");
-  // strs.push_back("   ");
-  strs.push_back("au");
-  for (int i = 0; i < strs.size(); i++) {
-    cout << Solution1().lengthOfLongestSubstring(strs.at(i)) << endl;
-  }
-  return 0;
-}
 
-} // namespace leetcode_0003
+}  // namespace leetcode_3
