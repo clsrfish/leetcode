@@ -1,0 +1,29 @@
+name: Test
+
+on: [push]
+
+jobs:
+  gtest:
+    name: Run tests on GTest
+    runs-on: macos-10.15
+    env:
+      buildDir: "${{ github.workspace }}/build"
+      executable: leetcode
+
+    steps:
+      - name: Project checkout
+        uses: actions/checkout@v2
+
+      - name: Get latest CMake and ninja
+        # Using 'latest' branch, the most recent CMake and ninja are installed.
+        uses: lukka/get-cmake@latest
+
+      - name: Run CMake, build with CMake
+        uses: lukka/run-cmake@v3
+        with:
+          cmakeListsTxtPath: ${{ github.workspace }}/CMakeLists.txt
+          buildDirectory: ${{ env.buildDir }}
+          cmakeAppendedArgs: "--log-level=DEBUG -Wdev -DCMAKE_BUILD_TYPE=Debug"
+
+      - name: Run executable
+        run: ${{ env.buildDir }}/${{ env.executable }}

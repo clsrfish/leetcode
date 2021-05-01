@@ -1,4 +1,3 @@
-# leetcode-cpp
+# Leetcode
 
-https://leetcode-cn.com/problemset/all
-
+[![Test Status](https://github.com/clsrfish/leetcode-cpp/workflows/Test/badge.svg)](https://github.com/clsrfish/leetcode-cpp/actions)

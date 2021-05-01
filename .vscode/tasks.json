@@ -29,8 +29,11 @@
         {
             "type": "process",
             "label": "C/C++: make",
-            "command": "make",
-            "args": [],
+            "command": "cmake",
+            "args": [
+                "--build",
+                "."
+            ],
             "options": {
                 "cwd": "${workspaceFolder}/build"
             },

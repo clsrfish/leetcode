@@ -8,12 +8,11 @@ using namespace std;
 namespace leetcode_0004 {
 string key = "0004";
 class Solution {
-public:
+ public:
   double findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2) {
     int l = nums1.size() + nums2.size();
     bool d = l % 2 == 0;
     int mid = l / 2;
-    int minl = min(nums1.size(), nums2.size());
     int mids[2] = {0, 0};
     int i = 0;
     int j = 0;
@@ -73,4 +72,4 @@ int main() {
 
   return 0;
 }
-} // namespace leetcode_0004
+}  // namespace leetcode_0004

@@ -1,13 +1,16 @@
 /**
  * 字符串转换整数 (atoi)
  */
+#include <limits.h>
+
 #include <iostream>
 #include <map>
+
 using namespace std;
 namespace leetcode_0008 {
 string key = "0008";
 class Solution {
-public:
+ public:
   int myAtoi(string str) {
     int sign = 1;
     bool running = false;
@@ -55,10 +58,9 @@ int main() {
   auto iter = inputs.begin();
   while (iter != inputs.end()) {
     int result = Solution().myAtoi((*iter).first);
-    cout << "string: " << (*iter).first << " result: " << result
-         << " expected: " << (*iter).second << endl;
+    cout << "string: " << (*iter).first << " result: " << result << " expected: " << (*iter).second << endl;
     ++iter;
   }
   return 0;
 }
-} // namespace leetcode_0008
+}  // namespace leetcode_0008

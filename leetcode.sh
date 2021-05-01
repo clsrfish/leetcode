@@ -18,17 +18,7 @@ if [ $? != 0 ]; then
     exit $?
 fi
 
-if [ $(uname) == "Linux" ]; then
-    cpu_core=$(nproc)
-elif [ $(uname) == "Darwin" ]; then
-    cpu_core=$(sysctl -n hw.physicalcpu)
-else
-    echo "Unsupported platform"
-    exit 1
-fi
-echo "-- CPU core: $cpu_core"
-
-make -j${cpu_core} -C build
+cmake --build build
 if [ $? != 0 ]; then
     exit $?
 fi
