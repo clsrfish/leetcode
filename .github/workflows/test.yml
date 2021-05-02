@@ -5,7 +5,10 @@ on: [push]
 jobs:
   gtest:
     name: Run tests on GTest
-    runs-on: macos-10.15
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     env:
       buildDir: "${{ github.workspace }}/build"
       executable: leetcode
