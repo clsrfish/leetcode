@@ -31,7 +31,6 @@ enable_testing()
 
 # gtest configurations
 include(FetchContent)
-set(FETCHCONTENT_BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/.dep)
 FetchContent_Declare(
     gtest
     GIT_REPOSITORY https://github.com/google/googletest.git

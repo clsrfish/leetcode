@@ -1,0 +1,12 @@
+FROM ubuntu:20.04
+
+RUN apt update && \
+  apt install -y software-properties-common && \
+  add-apt-repository -y ppa:ubuntu-toolchain-r/test
+
+RUN apt install -y git cmake gcc-10 g++-10 && \
+  update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 --slave /usr/bin/g++ g++ /usr/bin/g++-10 --slave /usr/bin/gcov gcov /usr/bin/gcov-10 && \
+  gcc --version && g++ --version && cmake --version && \
+  apt clean
+
+ENV CC=/usr/bin/gcc-10 CXX=/usr/bin/gcc-10

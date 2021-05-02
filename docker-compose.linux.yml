@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  gtest:
+    build:
+      context: .
+      dockerfile: Dockerfile.linux
+    image: clsrfish/leetcode
+    volumes:
+      - ".:/workspace"
+    working_dir: /workspace/build
+    command: sh -c 'cmake --log-level=DEBUG -Wdev -DCMAKE_BUILD_TYPE=Debug .. && cmake --build . && ./leetcode'
