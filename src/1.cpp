@@ -14,7 +14,7 @@ class Solution {
     vector<int> result;
     map<int, int> bucket;
 
-    for (int i = 0; i < nums.size(); i++) {
+    for (size_t i = 0; i < nums.size(); i++) {
       int remain = target - nums.at(i);
       map<int, int>::iterator find = bucket.find(remain);
       if (find != bucket.end()) {

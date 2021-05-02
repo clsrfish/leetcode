@@ -16,12 +16,12 @@
 #include <vector>
 
 template <class T>
-std::string vector2str(const std::vector<T> &v, int len = -1) {
+std::string vector2str(const std::vector<T> &v, size_t len = 0) {
   std::stringstream ss;
   if (len < 0) {
     len = v.size();
   }
-  int vSize = v.size();
+  size_t vSize = v.size();
   len = std::min(len, vSize);
 
   ss << "[";

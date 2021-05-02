@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <string>
+#include <tuple>
 #include <vector>
 
 #include "./utils/stl_utils.hpp"
@@ -23,7 +24,7 @@ class Solution {
   static const char RIGHT = ')';
 
   void generateDFS(std::vector<std::string> &res, char *parenthesis, int cur_index, int left_count, int right_count,
-                   const unsigned int max_count) {
+                   const int max_count) {
     if (left_count < right_count) {
       return;
     }

@@ -25,7 +25,7 @@ class Solution {
     map<char, int> marks;
     int start = 0;
     int max = 0;
-    for (int i = 0; i < s.length(); i++) {
+    for (size_t i = 0; i < s.length(); i++) {
       char c = s.at(i);
       map<char, int>::iterator find = marks.find(c);
       if (find != marks.end() && (*find).second != -1)  // found repeated character
@@ -56,17 +56,17 @@ class Solution {
 class Solution2 {
  public:
   int lengthOfLongestSubstring(string s) {
-    int len = s.length();
+    size_t len = s.length();
     if (len <= 1) {
       return len;
     }
     int max = 1;
     int max_tmp = 1;
-    int start_pos = 0;
+    size_t start_pos = 0;
 
-    for (int i = 1; i < len; ++i) {
+    for (size_t i = 1; i < len; ++i) {
       const char c = s.at(i);
-      int redundant_pos = s.rfind(c, i - 1);
+      size_t redundant_pos = s.rfind(c, i - 1);
       if (redundant_pos == string::npos || redundant_pos < start_pos) {  // no repeat
         ++max_tmp;
       } else if (redundant_pos >= start_pos) {  // repeat
