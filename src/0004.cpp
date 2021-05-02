@@ -10,13 +10,13 @@ string key = "0004";
 class Solution {
  public:
   double findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2) {
-    int l = nums1.size() + nums2.size();
-    bool d = l % 2 == 0;
-    int mid = l / 2;
+    size_t l = nums1.size() + nums2.size();
+    size_t d = l % 2 == 0;
+    size_t mid = l / 2;
     int mids[2] = {0, 0};
-    int i = 0;
-    int j = 0;
-    int k = 0;
+    size_t i = 0;
+    size_t j = 0;
+    size_t k = 0;
     while (i < nums1.size() && j < nums2.size() && k <= mid) {
       int a = nums1.at(i);
       int b = nums2.at(j);

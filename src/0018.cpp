@@ -15,20 +15,17 @@
 namespace leetcode_0018 {
 std::string key = "0018";
 class Solution {
-public:
+ public:
   std::vector<std::vector<int>> fourSum(std::vector<int> &nums, int target) {
-
     std::sort(nums.begin(), nums.end());
     return nSum(nums, target, 0, 4);
   }
 
-private:
-  std::vector<std::vector<int>> nSum(std::vector<int> &nums, int target,
-                                     int start, int n) {
-
+ private:
+  std::vector<std::vector<int>> nSum(std::vector<int> &nums, int target, size_t start, int n) {
     std::vector<std::vector<int>> res;
     auto size = nums.size();
-    if (size < n) {
+    if (static_cast<int>(size) < n) {
       return res;
     }
     if (n == 2) {
@@ -55,11 +52,10 @@ private:
     return res;
   }
 
-  std::vector<std::vector<int>> twoSum(std::vector<int> &nums, int target,
-                                       int start) {
+  std::vector<std::vector<int>> twoSum(std::vector<int> &nums, int target, size_t start) {
     auto res = std::vector<std::vector<int>>();
-    int end = nums.size() - 1;
-    int left = start, right = end;
+    size_t end = nums.size() - 1;
+    size_t left = start, right = end;
     while (left < right) {
       // avoid unnecessary calculations
       if (nums[right] * 2 > target || nums[left] * 2 < target) {
@@ -94,9 +90,8 @@ int main() {
       {-1, -1, 1, 1},
   };
   auto output = Solution().fourSum(input, 0);
-  bool equal = std::equal(output.begin(), output.end(), expected.begin(),
-                          expected.end());
+  bool equal = std::equal(output.begin(), output.end(), expected.begin(), expected.end());
   std::cout << "equal: " << equal << std::endl;
   return 0;
 }
-} // namespace leetcode_0018
+}  // namespace leetcode_0018

@@ -9,20 +9,20 @@ using namespace std;
 namespace leetcode_0014 {
 string key = "0014";
 class Solution {
-public:
+ public:
   string longestCommonPrefix(vector<string> &strs) {
     if (strs.size() == 0) {
       return "";
     }
     string a = strs[0];
-    for (int i = 1; i < strs.size(); i++) {
+    for (size_t i = 1; i < strs.size(); i++) {
       string b = strs.at(i);
       a = commonPrefix(a, b);
     }
     return a;
   }
 
-private:
+ private:
   string commonPrefix(string a, string b) {
     string lstr, sstr;
     if (a.length() > b.length()) {
@@ -33,7 +33,7 @@ private:
       sstr = a;
     }
 
-    for (int i = 0; i < sstr.length(); i++) {
+    for (size_t i = 0; i < sstr.length(); i++) {
       if (sstr.at(i) != lstr.at(i)) {
         sstr = sstr.substr(0, i);
         break;
@@ -54,4 +54,4 @@ int main() {
   return 0;
 }
 
-} // namespace leetcode_0014
+}  // namespace leetcode_0014
