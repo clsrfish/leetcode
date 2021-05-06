@@ -29,6 +29,7 @@ add_subdirectory(src)
 # Test case
 enable_testing()
 
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/test/utils)
 # gtest configurations
 include(FetchContent)
 FetchContent_Declare(
@@ -66,7 +67,7 @@ else()
     add_executable(${PROJECT_NAME} ${LEETCODE_PROBLEM_FINAL})
 endif()
 
-target_link_libraries(${PROJECT_NAME} PRIVATE src gtest_main)
+target_link_libraries(${PROJECT_NAME} PRIVATE src testutils gtest_main)
 include(GoogleTest)
 gtest_discover_tests(${PROJECT_NAME})
 
