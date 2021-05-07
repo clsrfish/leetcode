@@ -22,7 +22,7 @@ link_directories(
     ${PROJECT_BINARY_DIR}
 )
 
-add_subdirectory(src)
+
 # aux_source_directory(. SRCS)
 # target_link_libraries(${PROJECT_NAME} src)
 
@@ -60,16 +60,20 @@ endif()
 
 if(${LEETCODE_PROBLEM_FINAL} STREQUAL "ALL")
     message(STATUS "Building all leetcode problems.")
+    set(LEETCODE_SRC_FILE "ALL" CACHE STRING "" FORCE)
     aux_source_directory(./test TEST_SUIT_SRCS)
     add_executable(${PROJECT_NAME} ${TEST_SUIT_SRCS})
 else()
     message(STATUS "Building leetcode[" ${LEETCODE_PROBLEM} "]")
+    set(LEETCODE_SRC_FILE ${CMAKE_CURRENT_SOURCE_DIR}/src/${LEETCODE_PROBLEM}.cpp CACHE STRING "" FORCE)
     add_executable(${PROJECT_NAME} ${LEETCODE_PROBLEM_FINAL})
 endif()
+add_subdirectory(src)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE src testutils gtest_main)
 include(GoogleTest)
-gtest_discover_tests(${PROJECT_NAME})
+gtest_discover_tests(${PROJECT_NAME}
+    XML_OUTPUT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/build)
 
 # build package installer start
 include (InstallRequiredSystemLibraries)
