@@ -24,3 +24,13 @@ TreeNode *createBTree(const std::vector<int> &heap) {
 
   return root;
 }
+
+void freeTreeNodes(TreeNode *root) {
+  if (root == nullptr) {
+    return;
+  }
+
+  freeTreeNodes(root->left);
+  freeTreeNodes(root->right);
+  delete root;
+}
