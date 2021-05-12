@@ -10,7 +10,7 @@
             "args": [
                 "--log-level=DEBUG",
                 "-DCMAKE_BUILD_TYPE=Debug",
-                "-DLEETCODE_PROBLEM=101",
+                "-DLEETCODE_PROBLEM=102",
                 "--graphviz=dependencies.dot",
                 ".."
             ],
