@@ -8,14 +8,16 @@
  * @copyright Copyright (c) 2021
  *
  */
-#include "./model/tree_node.hpp"
+#include <algorithm>
 #include <iostream>
 #include <string>
 #include <vector>
 
+#include "./model/tree_node.hpp"
+
 namespace leetcode_103 {
 class Solution {
-public:
+ public:
   std::vector<std::vector<int>> zigzagLevelOrder(TreeNode *root) {
     std::vector<std::vector<int>> res;
     if (root == nullptr) {
@@ -49,4 +51,4 @@ public:
     return res;
   }
 };
-} // namespace leetcode_103
+}  // namespace leetcode_103
