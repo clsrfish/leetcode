@@ -34,3 +34,17 @@ void freeTreeNodes(TreeNode *root) {
   freeTreeNodes(root->right);
   delete root;
 }
+
+bool treeEquals(TreeNode *a, TreeNode *b) {
+  if (a == nullptr && b == nullptr) {
+    return true;
+  }
+  if ((a != nullptr && b == nullptr) || (a == nullptr && b == nullptr)) {
+    return false;
+  }
+  if (a->val != b->val) {
+    return false;
+  }
+
+  return treeEquals(a->left, b->left) && treeEquals(a->right, b->right);
+}
