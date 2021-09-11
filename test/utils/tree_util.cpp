@@ -37,10 +37,10 @@ void freeTreeNodes(TreeNode *root) {
 
 std::vector<int> levelOrder(TreeNode *root) {
   std::vector<int> res;
-  std::vector<TreeNode *> queueA, queueB;
-  queueA.emplace_back(root);
-  while (!queueA.empty()) {
-  }
+  // std::vector<TreeNode *> queueA, queueB;
+  // queueA.emplace_back(root);
+  // while (!queueA.empty()) {
+  // }
   return res;
 }
 
