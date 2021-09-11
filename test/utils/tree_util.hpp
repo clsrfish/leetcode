@@ -17,11 +17,9 @@ TreeNode *createBTree(const std::vector<int> &heap);
 void freeTreeNodes(TreeNode *root);
 
 /**
- * @brief determine if tree a and b are the same.
+ * @brief re-create heap from tree by travsaling level-orderly.
  *
- * @param a
- * @param b
- * @return true, a is same as b
- * @return false, if not the same
+ * @param root
+ * @return std::vector<int>
  */
-bool treeEquals(TreeNode *a, TreeNode *b);
+std::vector<int> levelOrder(TreeNode *root);

@@ -35,16 +35,11 @@ void freeTreeNodes(TreeNode *root) {
   delete root;
 }
 
-bool treeEquals(TreeNode *a, TreeNode *b) {
-  if (a == nullptr && b == nullptr) {
-    return true;
+std::vector<int> levelOrder(TreeNode *root) {
+  std::vector<int> res;
+  std::vector<TreeNode *> queueA, queueB;
+  queueA.emplace_back(root);
+  while (!queueA.empty()) {
   }
-  if ((a != nullptr && b == nullptr) || (a == nullptr && b == nullptr)) {
-    return false;
-  }
-  if (a->val != b->val) {
-    return false;
-  }
-
-  return treeEquals(a->left, b->left) && treeEquals(a->right, b->right);
+  return res;
 }
