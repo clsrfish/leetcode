@@ -24,6 +24,7 @@ class LeetCode98 : public testing::TestWithParam<std::tuple<std::vector<int>, bo
     root = createBTree(vals);
   }
   void TearDown() override {
+    freeTreeNodes(root);
   }
 
   bool valid;

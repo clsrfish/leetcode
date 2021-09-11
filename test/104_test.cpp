@@ -1,14 +1,17 @@
 // Unit tests for LeetCode Solution 104
 #include "../src/104.cpp"
-#include "./utils/tree_util.hpp"
+
 #include <gtest/gtest.h>
+
 #include <string>
 #include <tuple>
 #include <vector>
 
+#include "./utils/tree_util.hpp"
+
 namespace {
 class LeetCode104 : public testing::TestWithParam<std::tuple<std::vector<int>, int>> {
-protected:
+ protected:
   leetcode_104::Solution solution;
   LeetCode104() {
   }
@@ -36,4 +39,4 @@ TEST_P(LeetCode104, Test) {
 INSTANTIATE_TEST_SUITE_P(
     P, LeetCode104,
     testing::Values(std::make_tuple(std::vector<int>{3, 9, 20, NULL_NODE_VAL, NULL_NODE_VAL, 15, 7}, 3)));
-} // namespace
+}  // namespace
