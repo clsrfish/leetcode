@@ -16,7 +16,7 @@
 
 namespace leetcode_101 {
 class Solution {
-public:
+ public:
   bool isSymmetric(TreeNode *root) {
     if (root == nullptr) {
       return true;
@@ -34,15 +34,12 @@ public:
 
     return false;
   }
+};
 
-  /**
-   * @brief 非递归对称树.
-   *
-   * @param root
-   * @return true
-   * @return false
-   */
-  bool isSymmetricIteratively(TreeNode *root) {
+// 非递归
+class Solution2 {
+ public:
+  bool isSymmetric(TreeNode *root) {
     if (root == nullptr) {
       return true;
     }
@@ -82,4 +79,4 @@ public:
     return true;
   }
 };
-} // namespace leetcode_101
+}  // namespace leetcode_101
