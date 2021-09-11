@@ -10,11 +10,7 @@
             "args": [
                 "--log-level=DEBUG",
                 "-DCMAKE_BUILD_TYPE=Debug",
-<<<<<<< HEAD
-                "-DLEETCODE_PROBLEM=99",
-=======
-                "-DLEETCODE_PROBLEM=95",
->>>>>>> 16f1003 (WIP: levelOrder)
+                "-DLEETCODE_PROBLEM=105",
                 "--graphviz=dependencies.dot",
                 ".."
             ],

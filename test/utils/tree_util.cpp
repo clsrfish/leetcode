@@ -43,3 +43,17 @@ std::vector<int> levelOrder(TreeNode *root) {
   }
   return res;
 }
+
+bool treeEquals(TreeNode *left, TreeNode *right) {
+  if (left == nullptr && right == nullptr) {
+    return true;
+  }
+  if ((left != nullptr && right == nullptr) || (left == nullptr && right != nullptr)) {
+    return false;
+  }
+  if (left->val != right->val) {
+    return false;
+  }
+
+  return treeEquals(left->left, right->left) && treeEquals(left->right, right->right);
+}
