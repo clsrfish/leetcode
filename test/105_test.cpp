@@ -38,6 +38,7 @@ class LeetCode105 : public testing::TestWithParam<std::tuple<std::vector<int>, s
 TEST_P(LeetCode105, Test) {
   auto actual = solution.buildTree(preorder, inorder);
   ASSERT_EQ(true, treeEquals(actual, expected));
+  freeTreeNodes(actual);
 }
 
 // prefix, test_suite_name

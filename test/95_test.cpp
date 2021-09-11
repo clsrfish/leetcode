@@ -38,6 +38,7 @@ TEST_P(LeetCode95, Test) {
   // }
   // FIXME: traveral rule unclear
   // ASSERT_EQ(trees, flatten);
+  freeTrees(actual);
 }
 
 // prefix, test_suite_name

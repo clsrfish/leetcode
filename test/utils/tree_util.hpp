@@ -16,6 +16,8 @@ TreeNode *createBTree(const std::vector<int> &heap);
  */
 void freeTreeNodes(TreeNode *root);
 
+void freeTrees(std::vector<TreeNode *> trees);
+
 /**
  * @brief re-create heap from tree by travsaling level-orderly.
  *

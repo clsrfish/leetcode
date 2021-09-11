@@ -35,6 +35,13 @@ void freeTreeNodes(TreeNode *root) {
   delete root;
 }
 
+void freeTrees(std::vector<TreeNode *> trees) {
+  for (const auto &tree : trees) {
+    freeTreeNodes(tree);
+  }
+  trees.clear();
+}
+
 std::vector<int> levelOrder(TreeNode *root) {
   std::vector<int> res;
   // std::vector<TreeNode *> queueA, queueB;
