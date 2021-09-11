@@ -32,10 +32,10 @@ class LeetCode95 : public testing::TestWithParam<std::tuple<int, std::vector<std
 // test_suite_name, test_name
 TEST_P(LeetCode95, Test) {
   auto actual = solution.generateTrees(n);
-  std::vector<std::vector<int>> flatten;
-  for (auto& tree : actual) {
-    flatten.emplace_back(levelOrder(tree));
-  }
+  // std::vector<std::vector<int>> flatten;
+  // for (auto& tree : actual) {
+  //   flatten.emplace_back(levelOrder(tree));
+  // }
   // FIXME: traveral rule unclear
   // ASSERT_EQ(trees, flatten);
 }
