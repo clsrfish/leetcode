@@ -20,12 +20,13 @@ class LeetCode112 : public testing::TestWithParam<std::tuple<std::vector<int>, i
   void SetUp() override {
     std::vector<int> tmp;
     std::tie(tmp, targetSum, expected) = GetParam();
+    root = createBTree(tmp);
   }
   void TearDown() override {
     freeTreeNodes(root);
   }
 
-  TreeNode* root;
+  TreeNode* root = nullptr;
   int targetSum;
   bool expected;
 };

@@ -8,7 +8,7 @@
 #include <tuple>
 #include <vector>
 
-#include "../src/model/list_node.hpp"
+#include "./utils/list_util.hpp"
 
 namespace {
 

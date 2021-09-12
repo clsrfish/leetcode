@@ -40,13 +40,6 @@ ListNode *createListNodesFromVec(const std::vector<int> &inputs);
 std::vector<int> listNodes2Vec(ListNode *list);
 
 /**
- * @brief Free List Nodes.
- *
- * @param list
- */
-void freeListNodes(ListNode *list);
-
-/**
  * @brief print List string.
  *
  * @param node

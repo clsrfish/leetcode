@@ -29,14 +29,6 @@ std::vector<int> listNodes2Vec(ListNode *list) {
   return res;
 }
 
-void freeListNodes(ListNode *list) {
-  while (list != nullptr) {
-    ListNode *next = list->next;
-    delete list;
-    list = next;
-  }
-}
-
 void printListNodes(const ListNode *node) {
   std::cout << '[';
   while (node != nullptr) {
