@@ -3,4 +3,5 @@ BasedOnStyle: Google
 Language: Cpp
 AllowShortFunctionsOnASingleLine: false
 AlignEscapedNewlines: Left
-ColumnLimit: 120
+ColumnLimit: 0
+AlignAfterOpenBracket: BAS_Align
