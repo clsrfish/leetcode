@@ -1,5 +1,7 @@
 #include "../../src/model/list_node.hpp"
 
-ListNode* createList(std::vector<int>& nums);
+ListNode *createList(std::vector<int> &nums);
 
-void freeListNodes(ListNode* list);
+std::vector<int> listToVector(ListNode *head);
+
+void freeListNodes(ListNode *list);
