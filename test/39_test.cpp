@@ -33,15 +33,15 @@ TEST_P(LeetCode39, Test) {
 INSTANTIATE_TEST_SUITE_P(
     P, LeetCode39,
     testing::Values(std::make_tuple(std::vector<int>{2, 3, 6, 7}, 7,
-                                    std::vector<std::vector<int>>{{7},
-                                                                  {2, 2, 3}}),
+                                    std::vector<std::vector<int>>{{2, 2, 3},
+                                                                  {7}}),
                     std::make_tuple(std::vector<int>{2, 3, 5}, 8,
                                     std::vector<std::vector<int>>{
                                         {2, 2, 2, 2}, {2, 3, 3}, {3, 5}}),
                     std::make_tuple(std::vector<int>{2}, 1,
                                     std::vector<std::vector<int>>{}),
                     std::make_tuple(std::vector<int>{1}, 1,
-                                    std::vector<std::vector<int>>{}),
+                                    std::vector<std::vector<int>>{{1}}),
                     std::make_tuple(std::vector<int>{1}, 2,
                                     std::vector<std::vector<int>>{{1, 1}})));
 } // namespace
