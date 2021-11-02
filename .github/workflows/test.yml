@@ -7,7 +7,7 @@ jobs:
     name: Run tests on GTest
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest]
+        os: [macos-latest]
     runs-on: ${{ matrix.os }}
     env:
       buildDir: "${{ github.workspace }}/build"
