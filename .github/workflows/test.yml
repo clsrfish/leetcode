@@ -14,18 +14,17 @@ jobs:
 
     steps:
       - name: Project checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Get latest CMake and ninja
         # Using 'latest' branch, the most recent CMake and ninja are installed.
         uses: lukka/get-cmake@latest
 
-      - name: Run CMake, build with CMake
-        uses: lukka/run-cmake@v3
-        with:
-          cmakeListsTxtPath: ${{ github.workspace }}/CMakeLists.txt
-          buildDirectory: ${{ env.buildDir }}
-          cmakeAppendedArgs: "--log-level=DEBUG -Wdev -DCMAKE_BUILD_TYPE=Debug"
+      - name: CMake configure
+        run: cmake --log-level=DEBUG -Wdev -DCMAKE_BUILD_TYPE=Debug -S . -B ${{ env.buildDir }}
+
+      - name: CMake build
+        run: cmake --build ${{ env.buildDir }}
 
       - name: Run leetcode
         run: ${{ env.buildDir }}/tests/leetcode/tests_leetcode
