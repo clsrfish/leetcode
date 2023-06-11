@@ -13,10 +13,8 @@
 #include <vector>
 
 #include "../model/list_node.hpp"
-#include "../utils/stl_utils.hpp"
 
-namespace leetcode_0023 {
-std::string key = "0023";
+namespace leetcode_23 {
 
 class Solution {
  public:
@@ -74,17 +72,4 @@ class Solution {
   }
 };
 
-int main() {
-  std::cout << key << ":合并K个升序链表" << std::endl;
-  auto lists = std::vector<ListNode*>({
-      createListNodesFromVec(std::vector<int>{1, 4, 5}),
-      createListNodesFromVec(std::vector<int>{1, 3, 4}),
-      createListNodesFromVec(std::vector<int>{2, 6}),
-      createListNodesFromVec(std::vector<int>{}),
-  });
-  auto res = Solution().mergeKLists(lists);
-
-  printListNodes(res);
-  return 0;
-}
-}  // namespace leetcode_0023
+}  // namespace leetcode_23

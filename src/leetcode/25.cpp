@@ -13,58 +13,57 @@
 #include <vector>
 
 #include "../model/list_node.hpp"
-#include "../utils/stl_utils.hpp"
 
-namespace leetcode_0025 {
-std::string key = "0025";
-class Solution {
- public:
-  ListNode* reverseKGroup(ListNode* head, int k) {
-    return reverseFirstKGroup(head, k, lengthOfListNode(head));
-  }
-
- private:
-  int lengthOfListNode(ListNode* head) {
-    if (head == nullptr) {
-      return 0;
-    }
-    int length = 1;
-    while (head->next != nullptr) {
-      head = head->next;
-      length++;
+namespace leetcode_25
+{
+  class Solution
+  {
+  public:
+    ListNode *reverseKGroup(ListNode *head, int k)
+    {
+      return reverseFirstKGroup(head, k, lengthOfListNode(head));
     }
 
-    return length;
-  }
-  ListNode* reverseFirstKGroup(ListNode* head, int k, int remain) {
-    if (remain < k) {
-      return head;
-    }
-
-    ListNode* originHead = head;
-
-    ListNode* preNode = nullptr;
-    for (int i = 0; i < k; i++) {
-      auto next = head->next;
-      if (preNode != nullptr) {
-        head->next = preNode;
+  private:
+    int lengthOfListNode(ListNode *head)
+    {
+      if (head == nullptr)
+      {
+        return 0;
       }
-      preNode = head;
+      int length = 1;
+      while (head->next != nullptr)
+      {
+        head = head->next;
+        length++;
+      }
 
-      head = next;
+      return length;
     }
+    ListNode *reverseFirstKGroup(ListNode *head, int k, int remain)
+    {
+      if (remain < k)
+      {
+        return head;
+      }
 
-    originHead->next = reverseFirstKGroup(head, k, remain - k);
-    return preNode;
-  }
-};
-int main() {
-  std::cout << key << ": K 个一组翻转链表" << std::endl;
+      ListNode *originHead = head;
 
-  int k = 3;
-  auto list = createListNodesFromVec(std::vector<int>({1, 2, 3, 4, 5}));
-  auto res = Solution().reverseKGroup(list, k);
-  printListNodes(res);
-  return 0;
-}
-}  // namespace leetcode_0025
+      ListNode *preNode = nullptr;
+      for (int i = 0; i < k; i++)
+      {
+        auto next = head->next;
+        if (preNode != nullptr)
+        {
+          head->next = preNode;
+        }
+        preNode = head;
+
+        head = next;
+      }
+
+      originHead->next = reverseFirstKGroup(head, k, remain - k);
+      return preNode;
+    }
+  };
+} // namespace leetcode_25
