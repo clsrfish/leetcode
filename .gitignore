@@ -43,6 +43,6 @@
 
 # End of https://www.toptal.com/developers/gitignore/api/c++
 
-.dep
+.vscode/c_cpp_properties.json
 build/*
 !build/.gitkeep

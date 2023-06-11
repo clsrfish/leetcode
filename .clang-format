@@ -1,7 +1,0 @@
-# We'll use defaults from the Google style.
-BasedOnStyle: Google
-Language: Cpp
-AllowShortFunctionsOnASingleLine: false
-AlignEscapedNewlines: Left
-ColumnLimit: 0
-AlignAfterOpenBracket: BAS_Align

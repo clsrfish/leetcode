@@ -1,8 +1,8 @@
 {
     "recommendations": [
-        "ms-vscode.cpptools",
-        "twxs.cmake",
+        "cschlosser.doxdocgen",
         "ms-vscode.cmake-tools",
-        "cschlosser.doxdocgen"
+        "ms-vscode.cpptools",
+        "twxs.cmake"
     ]
 }

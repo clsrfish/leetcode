@@ -11,7 +11,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     env:
       buildDir: "${{ github.workspace }}/build"
-      executable: leetcode
 
     steps:
       - name: Project checkout
@@ -28,5 +27,5 @@ jobs:
           buildDirectory: ${{ env.buildDir }}
           cmakeAppendedArgs: "--log-level=DEBUG -Wdev -DCMAKE_BUILD_TYPE=Debug"
 
-      - name: Run executable
-        run: ${{ env.buildDir }}/${{ env.executable }}
+      - name: Run leetcode
+        run: ${{ env.buildDir }}/tests/leetcode/tests_leetcode
