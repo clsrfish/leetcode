@@ -28,7 +28,7 @@ class Solution {
   }
 
  private:
-  void levelOrderBottom(std::vector<std::vector<int>>& out, TreeNode* root, int level) {
+  void levelOrderBottom(std::vector<std::vector<int>>& out, TreeNode* root, unsigned int level) {
     if (root == nullptr) {
       return;
     }

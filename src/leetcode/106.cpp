@@ -41,7 +41,7 @@ class Solution {
 
  public:
   TreeNode* buildTree(std::vector<int>& inorder, std::vector<int>& postorder) {
-    for (int i = 0; i < inorder.size(); i++) {
+    for (std::size_t i = 0; i < inorder.size(); i++) {
       indcies[inorder[i]] = i;
     }
 
