@@ -44,7 +44,7 @@ TEST_P(LeetCode99, Test) {
 }
 
 // prefix, test_suite_name
-INSTANTIATE_TEST_SUITE_P(P, LeetCode99,
+INSTANTIATE_TEST_SUITE_P(leetcode, LeetCode99,
                          testing::Values(std::make_tuple(std::vector<int>{1, 3, NULL_NODE_VAL, NULL_NODE_VAL, 2},
                                                          std::vector<int>{3, 1, NULL_NODE_VAL, NULL_NODE_VAL, 2})));
 }  // namespace

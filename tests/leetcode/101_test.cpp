@@ -45,7 +45,7 @@ TEST_P(LeetCode101, TestIteratively) {
 
 // prefix, test_suite_name
 INSTANTIATE_TEST_SUITE_P(
-    P, LeetCode101,
+    leetcode, LeetCode101,
     testing::Values(std::make_tuple(std::vector<int>({1, 2, 2, 3, 4, 4, 3}), true),
                     std::make_tuple(std::vector<int>({1, 2, 2, NULL_NODE_VAL, 3, NULL_NODE_VAL, 3}), false)));
 }  // namespace

@@ -38,7 +38,7 @@ TEST_P(LeetCode3, TestSlideWindow) {
 }
 
 // prefix, test_suite_name
-INSTANTIATE_TEST_SUITE_P(P, LeetCode3,
+INSTANTIATE_TEST_SUITE_P(leetcode, LeetCode3,
                          testing::Values(std::make_tuple("abcabcbb", 3), std::make_tuple("bbbbb", 1),
                                          std::make_tuple("pwwkew", 3), std::make_tuple("   ", 1)));
 }  // namespace

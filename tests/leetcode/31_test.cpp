@@ -32,7 +32,7 @@ TEST_P(LeetCode31, Test) {
 }
 
 // prefix, test_suite_name
-INSTANTIATE_TEST_SUITE_P(P, LeetCode31,
+INSTANTIATE_TEST_SUITE_P(leetcode, LeetCode31,
                          testing::Values(
                              //  std::make_tuple(std::vector<int>{1, 2, 3}, std::vector<int>{1, 3, 2}),
                              //                std::make_tuple(std::vector<int>{3, 2, 1}, std::vector<int>{1, 2, 3}),

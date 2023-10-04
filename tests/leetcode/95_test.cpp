@@ -43,7 +43,7 @@ TEST_P(LeetCode95, Test) {
 
 // prefix, test_suite_name
 INSTANTIATE_TEST_SUITE_P(
-    P, LeetCode95,
+    leetcode, LeetCode95,
     testing::Values(std::make_tuple(3, std::vector<std::vector<int>>{{1, NULL_NODE_VAL, 2, NULL_NODE_VAL, 3},
                                                                      {1, NULL_NODE_VAL, 3, 2},
                                                                      {2, 1, 3},

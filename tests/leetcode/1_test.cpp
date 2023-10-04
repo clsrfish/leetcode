@@ -28,7 +28,7 @@ TEST_P(LeetCode1, Test) {
   ASSERT_EQ(res, expected);
 }
 
-INSTANTIATE_TEST_SUITE_P(P, LeetCode1,
+INSTANTIATE_TEST_SUITE_P(leetcode, LeetCode1,
                          testing::Values(std::make_tuple(std::vector<int>({2, 7, 11, 15}), 9, std::vector<int>({0, 1})),
                                          std::make_tuple(std::vector<int>({2, 7, 11, 15}), 9,
                                                          std::vector<int>({0, 1}))));

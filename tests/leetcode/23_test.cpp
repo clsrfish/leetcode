@@ -43,7 +43,7 @@ namespace
 
   // prefix, test_suite_name
   INSTANTIATE_TEST_SUITE_P(
-      P, LeetCode23,
+      leetcode, LeetCode23,
       testing::Values(
           std::make_tuple(std::vector<std::vector<int>>{{1, 4, 5}, {1, 3, 4}, {2, 6}, {}}, std::vector<int>{1, 1, 2, 3, 4, 4, 5, 6})));
 }

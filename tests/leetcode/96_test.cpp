@@ -36,6 +36,6 @@ TEST_P(LeetCode96, Test) {
 }
 
 // prefix, test_suite_name
-INSTANTIATE_TEST_SUITE_P(P, LeetCode96,
+INSTANTIATE_TEST_SUITE_P(leetcode, LeetCode96,
                          testing::Values(std::make_tuple(3, 5), std::make_tuple(1, 1), std::make_tuple(18, 477638700)));
 }  // namespace

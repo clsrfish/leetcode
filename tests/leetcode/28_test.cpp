@@ -30,7 +30,7 @@ TEST_P(LeetCode28, Test) {
   ASSERT_EQ(index, expected);
 }
 
-INSTANTIATE_TEST_SUITE_P(P, LeetCode28,
+INSTANTIATE_TEST_SUITE_P(leetcode, LeetCode28,
                          testing::Values(std::make_tuple("hello", "ll", 2), std::make_tuple("hello", "lol", -1),
                                          std::make_tuple("123", "1234", -1), std::make_tuple("", "", 0)));
 }  // namespace
