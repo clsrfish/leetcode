@@ -10,12 +10,12 @@
 #include "../utils/tree_util.hpp"
 
 namespace {
-class LeetCode104 : public testing::TestWithParam<std::tuple<std::vector<int>, int>> {
+class LeetCodeSuite_104 : public testing::TestWithParam<std::tuple<std::vector<int>, int>> {
  protected:
   leetcode_104::Solution solution;
-  LeetCode104() {
+  LeetCodeSuite_104() {
   }
-  ~LeetCode104() override {
+  ~LeetCodeSuite_104() override {
   }
   void SetUp() override {
     std::vector<int> nodes;
@@ -30,13 +30,13 @@ class LeetCode104 : public testing::TestWithParam<std::tuple<std::vector<int>, i
 };
 
 // test_suite_name, test_name
-TEST_P(LeetCode104, Test) {
+TEST_P(LeetCodeSuite_104, Test) {
   int actual = solution.maxDepth(root);
   ASSERT_EQ(actual, expected);
 }
 
 // prefix, test_suite_name
 INSTANTIATE_TEST_SUITE_P(
-    leetcode, LeetCode104,
+    leetcode, LeetCodeSuite_104,
     testing::Values(std::make_tuple(std::vector<int>{3, 9, 20, NULL_NODE_VAL, NULL_NODE_VAL, 15, 7}, 3)));
 }  // namespace

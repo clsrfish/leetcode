@@ -8,12 +8,12 @@
 #include <vector>
 
 namespace {
-class LeetCode31 : public testing::TestWithParam<std::tuple<std::vector<int>, std::vector<int>>> {
+class LeetCodeSuite_31 : public testing::TestWithParam<std::tuple<std::vector<int>, std::vector<int>>> {
  protected:
   leetcode_31::Solution solution;
-  LeetCode31() {
+  LeetCodeSuite_31() {
   }
-  ~LeetCode31() override {
+  ~LeetCodeSuite_31() override {
   }
   void SetUp() override {
     std::tie(nums, expected) = GetParam();
@@ -26,13 +26,13 @@ class LeetCode31 : public testing::TestWithParam<std::tuple<std::vector<int>, st
 };
 
 // test_suite_name, test_name
-TEST_P(LeetCode31, Test) {
+TEST_P(LeetCodeSuite_31, Test) {
   solution.nextPermutation(nums);
   ASSERT_EQ(nums, expected);
 }
 
 // prefix, test_suite_name
-INSTANTIATE_TEST_SUITE_P(leetcode, LeetCode31,
+INSTANTIATE_TEST_SUITE_P(leetcode, LeetCodeSuite_31,
                          testing::Values(
                              //  std::make_tuple(std::vector<int>{1, 2, 3}, std::vector<int>{1, 3, 2}),
                              //                std::make_tuple(std::vector<int>{3, 2, 1}, std::vector<int>{1, 2, 3}),

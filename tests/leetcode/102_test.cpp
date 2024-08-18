@@ -8,12 +8,12 @@
 #include "../utils/tree_util.hpp"
 
 namespace {
-class LeetCode102 : public testing::TestWithParam<std::tuple<std::vector<int>, std::vector<std::vector<int>>>> {
-protected:
+class LeetCodeSuite_102 : public testing::TestWithParam<std::tuple<std::vector<int>, std::vector<std::vector<int>>>> {
+ protected:
   leetcode_102::Solution solution;
-  LeetCode102() {
+  LeetCodeSuite_102() {
   }
-  ~LeetCode102() override {
+  ~LeetCodeSuite_102() override {
   }
   void SetUp() override {
     std::vector<int> nodes;
@@ -28,13 +28,13 @@ protected:
 };
 
 // test_suite_name, test_name
-TEST_P(LeetCode102, Test) {
+TEST_P(LeetCodeSuite_102, Test) {
   auto actual = solution.levelOrder(root);
   ASSERT_EQ(actual, expected);
 }
 
 // prefix, test_suite_name
-INSTANTIATE_TEST_SUITE_P(leetcode, LeetCode102,
+INSTANTIATE_TEST_SUITE_P(leetcode, LeetCodeSuite_102,
                          testing::Values(std::make_tuple(std::vector<int>{3, 9, 20, NULL_NODE_VAL, NULL_NODE_VAL, 15,
                                                                           7},
                                                          std::vector<std::vector<int>>{{3}, {9, 20}, {15, 7}})));

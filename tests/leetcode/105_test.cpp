@@ -11,12 +11,13 @@
 #include "../utils/tree_util.hpp"
 
 namespace {
-class LeetCode105 : public testing::TestWithParam<std::tuple<std::vector<int>, std::vector<int>, std::vector<int>>> {
+class LeetCodeSuite_105
+    : public testing::TestWithParam<std::tuple<std::vector<int>, std::vector<int>, std::vector<int>>> {
  protected:
   leetcode_105::Solution solution;
-  LeetCode105() {
+  LeetCodeSuite_105() {
   }
-  ~LeetCode105() override {
+  ~LeetCodeSuite_105() override {
   }
   void SetUp() override {
     std::vector<int> outputNodes;
@@ -35,7 +36,7 @@ class LeetCode105 : public testing::TestWithParam<std::tuple<std::vector<int>, s
 };
 
 // test_suite_name, test_name
-TEST_P(LeetCode105, Test) {
+TEST_P(LeetCodeSuite_105, Test) {
   auto actual = solution.buildTree(preorder, inorder);
   ASSERT_EQ(true, treeEquals(actual, expected));
   freeTreeNodes(actual);
@@ -43,7 +44,7 @@ TEST_P(LeetCode105, Test) {
 
 // prefix, test_suite_name
 INSTANTIATE_TEST_SUITE_P(
-    leetcode, LeetCode105,
+    leetcode, LeetCodeSuite_105,
     testing::Values(std::make_tuple(std::vector<int>{3, 9, 20, 15, 7}, std::vector<int>{9, 3, 15, 20, 7},
                                     std::vector<int>{3, 9, 20, NULL_NODE_VAL, NULL_NODE_VAL, 15, 7}),
                     std::make_tuple(std::vector<int>{-1}, std::vector<int>{-1}, std::vector<int>{-1})));

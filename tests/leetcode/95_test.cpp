@@ -12,12 +12,12 @@
 #include "../utils/tree_util.hpp"
 
 namespace {
-class LeetCode95 : public testing::TestWithParam<std::tuple<int, std::vector<std::vector<int>>>> {
+class LeetCodeSuite_95 : public testing::TestWithParam<std::tuple<int, std::vector<std::vector<int>>>> {
  protected:
   leetcode_95::Solution solution;
-  LeetCode95() {
+  LeetCodeSuite_95() {
   }
-  ~LeetCode95() override {
+  ~LeetCodeSuite_95() override {
   }
   void SetUp() override {
     std::tie(n, trees) = GetParam();
@@ -30,7 +30,7 @@ class LeetCode95 : public testing::TestWithParam<std::tuple<int, std::vector<std
 };
 
 // test_suite_name, test_name
-TEST_P(LeetCode95, Test) {
+TEST_P(LeetCodeSuite_95, Test) {
   auto actual = solution.generateTrees(n);
   // std::vector<std::vector<int>> flatten;
   // for (auto& tree : actual) {
@@ -43,7 +43,7 @@ TEST_P(LeetCode95, Test) {
 
 // prefix, test_suite_name
 INSTANTIATE_TEST_SUITE_P(
-    leetcode, LeetCode95,
+    leetcode, LeetCodeSuite_95,
     testing::Values(std::make_tuple(3, std::vector<std::vector<int>>{{1, NULL_NODE_VAL, 2, NULL_NODE_VAL, 3},
                                                                      {1, NULL_NODE_VAL, 3, 2},
                                                                      {2, 1, 3},

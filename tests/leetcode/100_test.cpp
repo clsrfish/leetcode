@@ -10,12 +10,12 @@
 #include "../utils/tree_util.hpp"
 
 namespace {
-class LeetCode100 : public testing::TestWithParam<std::tuple<std::vector<int>, std::vector<int>, bool>> {
+class LeetCodeSuite_100 : public testing::TestWithParam<std::tuple<std::vector<int>, std::vector<int>, bool>> {
  protected:
   leetcode_100::Solution solution;
-  LeetCode100() {
+  LeetCodeSuite_100() {
   }
-  ~LeetCode100() override {
+  ~LeetCodeSuite_100() override {
   }
   void SetUp() override {
     std::vector<int> pHeap, qHeap;
@@ -32,14 +32,14 @@ class LeetCode100 : public testing::TestWithParam<std::tuple<std::vector<int>, s
 };
 
 // test_suite_name, test_name
-TEST_P(LeetCode100, Test) {
+TEST_P(LeetCodeSuite_100, Test) {
   bool actual = solution.isSameTree(p, q);
   ASSERT_EQ(actual, expected);
 }
 
 // prefix, test_suite_name
 INSTANTIATE_TEST_SUITE_P(
-    leetcode, LeetCode100,
+    leetcode, LeetCodeSuite_100,
     testing::Values(std::make_tuple(std::vector<int>({1, 2, 3}), std::vector<int>({1, 2, 3}), true),
                     std::make_tuple(std::vector<int>({1, 2}), std::vector<int>({1, NULL_NODE_VAL, 2}), false),
                     std::make_tuple(std::vector<int>({1, 2, 1}), std::vector<int>({1, 1, 2}), false)));
