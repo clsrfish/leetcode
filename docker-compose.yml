@@ -1,0 +1,12 @@
+version: "3"
+services:
+  leetcode:
+    build:
+      context: .
+    image: leetcode
+    volumes:
+      - ./cmake:/workspace/cmake
+      - ./src:/workspace/src
+      - ./tests:/workspace/tests
+      - ./CMakeLists.txt:/workspace/CMakeLists.txt
+      - ./test.sh:/workspace/test.sh
