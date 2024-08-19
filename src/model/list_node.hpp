@@ -12,7 +12,8 @@
 #define LIST_NODE_H
 #include <iostream>
 #include <vector>
-struct ListNode {
+class ListNode {
+ public:
   int val;
   ListNode *next;
   ListNode() : val(0), next(nullptr) {
@@ -21,29 +22,23 @@ struct ListNode {
   }
   ListNode(int x, ListNode *next) : val(x), next(next) {
   }
+
+  /**
+   * @brief Create a List Nodes From Vec object
+   *
+   * @param source
+   * @return ListNode*
+   */
+  static ListNode *fromVector(const std::vector<int> &source);
+  /**
+   * @brief Convert List Nodes to vector.
+   *
+   * @param head
+   * @return std::vector<int>
+   */
+  static std::vector<int> toVector(ListNode *head);
+  static void free(ListNode *head);
+  static void print(const ListNode *head);
 };
-
-/**
- * @brief Create a List Nodes From Vec object
- *
- * @param inputs
- * @return ListNode*
- */
-ListNode *createListNodesFromVec(const std::vector<int> &inputs);
-
-/**
- * @brief Convert List Nodes to vector.
- *
- * @param list
- * @return std::vector<int>
- */
-std::vector<int> listNodes2Vec(ListNode *list);
-
-/**
- * @brief print List string.
- *
- * @param node
- */
-void printListNodes(const ListNode *node);
 
 #endif

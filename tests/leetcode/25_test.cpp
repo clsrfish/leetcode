@@ -1,7 +1,6 @@
 #include "../../src/leetcode/25.cpp"
 
 #include <gtest/gtest.h>
-#include "../utils/list_util.hpp"
 
 namespace
 {
@@ -15,7 +14,7 @@ class LeetCodeSuite_25 : public testing::TestWithParam<std::tuple<std::vector<in
   void SetUp() override {
     std::vector<int> input;
     std::tie(input, this->k, this->expected) = GetParam();
-    list = createListNodesFromVec(input);
+    list = ListNode::fromVector(input);
   }
   void TearDown() override {
   }
@@ -28,9 +27,9 @@ class LeetCodeSuite_25 : public testing::TestWithParam<std::tuple<std::vector<in
   // test_suite_name, test_name
 TEST_P(LeetCodeSuite_25, Test) {
   auto actual = solution.reverseKGroup(this->list, this->k);
-  auto vec = listNodes2Vec(actual);
+  auto vec = ListNode::toVector(actual);
   ASSERT_EQ(expected, vec);
-  freeListNodes(actual);
+  ListNode::free(actual);
 }
 
   // prefix, test_suite_name

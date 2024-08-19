@@ -5,7 +5,6 @@
 #include <vector>
 
 #include "../../src/leetcode/83.cpp"
-#include "../utils/list_util.hpp"
 
 namespace {
 class LeetCodeSuite_83 : public testing::TestWithParam<std::tuple<std::vector<int>, std::vector<int>>> {
@@ -14,12 +13,12 @@ class LeetCodeSuite_83 : public testing::TestWithParam<std::tuple<std::vector<in
   LeetCodeSuite_83() {
   }
   ~LeetCodeSuite_83() override {
-    freeListNodes(list);
+    ListNode::free(list);
   }
   void SetUp() override {
     std::vector<int> nodes;
     std::tie(nodes, expected) = GetParam();
-    list = createList(nodes);
+    list = ListNode::fromVector(nodes);
   }
   void TearDown() override {}
   ListNode *list;
@@ -29,7 +28,7 @@ class LeetCodeSuite_83 : public testing::TestWithParam<std::tuple<std::vector<in
 // test_suite_name, test_name
 TEST_P(LeetCodeSuite_83, Test) {
   auto actual = solution.deleteDuplicates(list);
-  auto actualVec = listToVector(actual);
+  auto actualVec = ListNode::toVector(actual);
   ASSERT_EQ(expected, actualVec);
 }
 

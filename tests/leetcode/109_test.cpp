@@ -7,7 +7,6 @@
 #include <tuple>
 #include <vector>
 
-#include "../utils/list_util.hpp"
 #include "../utils/tree_util.hpp"
 
 namespace {
@@ -21,12 +20,12 @@ class LeetCodeSuite_109 : public testing::TestWithParam<std::tuple<std::vector<i
   void SetUp() override {
     std::vector<int> a, b;
     std::tie(a, b) = GetParam();
-    input = createList(a);
+    input = ListNode::fromVector(a);
     expected = createBTree(b);
   }
   void TearDown() override {
     freeTreeNodes(expected);
-    freeListNodes(input);
+    ListNode::free(input);
   }
 
   ListNode* input;

@@ -1,7 +1,6 @@
 #include "../../src/leetcode/23.cpp"
 
 #include <gtest/gtest.h>
-#include "../utils/list_util.hpp"
 
 namespace
 {
@@ -16,7 +15,7 @@ class LeetCodeSuite_23 : public testing::TestWithParam<std::tuple<std::vector<st
     std::vector<std::vector<int>> input;
     std::tie(input, expected) = GetParam();
     for (auto &&vec : input) {
-      this->lists.push_back(createListNodesFromVec(vec));
+      this->lists.push_back(ListNode::fromVector(vec));
     }
   }
   void TearDown() override {
@@ -29,9 +28,9 @@ class LeetCodeSuite_23 : public testing::TestWithParam<std::tuple<std::vector<st
   // test_suite_name, test_name
 TEST_P(LeetCodeSuite_23, Test) {
   auto actual = solution.mergeKLists(this->lists);
-  auto vec = listNodes2Vec(actual);
+  auto vec = ListNode::toVector(actual);
   ASSERT_EQ(expected, vec);
-  freeListNodes(actual);
+  ListNode::free(actual);
 }
 
   // prefix, test_suite_name

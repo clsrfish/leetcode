@@ -1,14 +1,14 @@
 #include "./list_node.hpp"
 
-ListNode *createListNodesFromVec(const std::vector<int> &inputs) {
-  if (inputs.empty()) {
+ListNode *ListNode::fromVector(const std::vector<int> &source) {
+  if (source.empty()) {
     return nullptr;
   }
 
   ListNode *head = nullptr;
   ListNode *node = nullptr;
 
-  for (auto &&i : inputs) {
+  for (auto &&i : source) {
     if (head == nullptr) {
       head = new ListNode(i);
       node = head;
@@ -20,16 +20,25 @@ ListNode *createListNodesFromVec(const std::vector<int> &inputs) {
   return head;
 }
 
-std::vector<int> listNodes2Vec(ListNode *list) {
+std::vector<int> ListNode::toVector(ListNode *head) {
   std::vector<int> res;
-  while (list != nullptr) {
-    res.push_back(list->val);
-    list = list->next;
+  while (head != nullptr) {
+    res.push_back(head->val);
+    head = head->next;
   }
   return res;
 }
 
-void printListNodes(const ListNode *node) {
+void ListNode::free(ListNode *head) {
+  if (head == nullptr) {
+    return;
+  }
+  ListNode::free(head->next);
+  head->next = nullptr;
+  delete head;
+}
+
+void ListNode::print(const ListNode *node) {
   std::cout << '[';
   while (node != nullptr) {
     std::cout << node->val;

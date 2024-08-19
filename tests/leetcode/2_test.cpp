@@ -8,8 +8,6 @@
 #include <tuple>
 #include <vector>
 
-#include "../utils/list_util.hpp"
-
 namespace {
 
 class LeetCodeSuite_2
@@ -24,12 +22,12 @@ class LeetCodeSuite_2
     std::vector<int> v1, v2;
     std::tie(v1, v2, expected) = GetParam();
 
-    l1 = createListNodesFromVec(v1);
-    l2 = createListNodesFromVec(v2);
+    l1 = ListNode::fromVector(v1);
+    l2 = ListNode::fromVector(v2);
   }
   void TearDown() override {
-    freeListNodes(l1);
-    freeListNodes(l2);
+    ListNode::free(l1);
+    ListNode::free(l2);
   }
 
   ListNode* l1 = nullptr;
@@ -41,9 +39,9 @@ class LeetCodeSuite_2
 TEST_P(LeetCodeSuite_2, Test) {
   auto actual = solution.addTwoNumbers(l1, l2);
 
-  ASSERT_EQ(listNodes2Vec(actual), expected);
+  ASSERT_EQ(expected, ListNode::toVector(actual));
 
-  freeListNodes(actual);
+  ListNode::free(actual);
 }
 
 // prefix, test_suite_name
