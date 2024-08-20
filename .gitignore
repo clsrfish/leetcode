@@ -46,3 +46,6 @@
 .vscode/c_cpp_properties.json
 build/*
 !build/.gitkeep
+
+*.log
+.DS_Store
