@@ -1,4 +1,4 @@
-name: Test
+name: GoogleTest
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   gtest:
-    name: Run tests on GTest
+    name: Launch GoogleTest
     strategy:
       matrix:
         os: [macos-latest]
