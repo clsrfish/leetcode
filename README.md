@@ -1,5 +1,5 @@
 # Leetcode
 
-[![Cpp](https://github.com/clsrfish/leetcode/workflows/gtest/badge.svg)](https://github.com/clsrfish/leetcode/actions/workflows/gtest.yml)
+[![Cpp](https://github.com/clsrfish/leetcode/actions/workflows/gtest.yml/badge.svg?branch=master)](https://github.com/clsrfish/leetcode/actions/workflows/gtest.yml)
 
-[![Python](https://github.com/clsrfish/leetcode/workflows/Pytest/badge.svg)](https://github.com/clsrfish/leetcode/actions/workflows/pytest.yml)
+[![pytest](https://github.com/clsrfish/leetcode/actions/workflows/pytest.yml/badge.svg?branch=python)](https://github.com/clsrfish/leetcode/actions/workflows/pytest.yml)
