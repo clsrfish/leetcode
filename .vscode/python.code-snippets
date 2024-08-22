@@ -1,0 +1,29 @@
+{
+	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	"LeetCode solution": {
+		"prefix": "leetcode_solution",
+		"body": [
+			"from typing import List, Optional",
+			"from src.model import ListNode",
+			"class Solution:",
+			"\t${1:pass}",
+		]
+	},
+	"LeetCode test": {
+		"prefix": "leetcode_test",
+		"body": [
+			"import pytest",
+			"from src.leetcode.s${TM_FILENAME_BASE/(\\d+)_test$/$1/} import Solution",
+			"from src.model import ListNode",
+			"dataset = lambda: [",
+			"\t($2),",
+			"]",
+			"@pytest.mark.parametrize(\"$1\", dataset())",
+			"def test($1):",
+			"\t${3:pass}",
+		]
+	}
+}
