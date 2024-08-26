@@ -9,30 +9,19 @@ class Solution:
         result = list[int]()
         left = 0
         right = len(nums) - 1
-        while left < len(nums) and nums[left] < 0:
-            left += 1
-        while right >= 0 and nums[right] >= 0:
-            right -= 1
-        left -= 1
-        right += 1
 
-        while left >= 0 and right < len(nums):
-
-            if nums[left] + nums[right] < 0:
-                result.append(nums[right] ** 2)
-                right += 1
-            elif nums[left] + nums[right] > 0:
+        while left < right:
+            sum = nums[left] + nums[right]
+            if sum < 0:
                 result.append(nums[left] ** 2)
-                left -= 1
+                left += 1
+            elif sum > 0:
+                result.append(nums[right] ** 2)
+                right -= 1
             else:
                 result.extend([nums[right] ** 2] * 2)
-                right += 1
-                left -= 1
-
-        while right < len(nums):
+                right -= 1
+                left += 1
+        if len(result) != len(nums):
             result.append(nums[right] ** 2)
-            right += 1
-        while left >= 0:
-            result.append(nums[left] ** 2)
-            left -= 1
-        return result
+        return list(reversed(result))
