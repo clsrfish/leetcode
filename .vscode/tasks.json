@@ -10,7 +10,10 @@
             "args": [
                 "src/leetcode/s${input:problem}.py",
                 "tests/leetcode/${input:problem}_test.py"
-            ]
+            ],
+            "presentation": {
+                "close": true
+            }
         }
     ],
     "inputs": [
