@@ -26,3 +26,19 @@ class ListNode:
             head = head.next
 
         return result
+
+    def findTail(head: "ListNode") -> "ListNode":
+        while head and head.next:
+            head = head.next
+        return head
+
+    def atPos(head: "ListNode", pos: int) -> "ListNode":
+        if pos < 0:
+            return None
+
+        for _ in range(0, pos):
+            if head == None:
+                return None
+            head = head.next
+
+        return head
