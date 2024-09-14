@@ -1,3 +1,4 @@
+import collections
 from typing import List
 
 
@@ -30,29 +31,23 @@ class Solution:
 
 
 class SolutionON:
-    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
-        # if k == 1:
-        #     return nums
-        result = list[int]()
-        maxValPos = list[int]()
-        left, right = 0, k - 1
-        while right < len(nums):
-            if len(maxValPos) > 0 and maxValPos[0] < left:
-                maxValPos.pop(0)
 
-            if len(maxValPos) == 0:
-                for i in range(left, right + 1):
-                    if len(maxValPos) == 0:
-                        maxValPos.append(i)
-                        continue
-                    while len(maxValPos) > 0 and nums[maxValPos[-1]] <= nums[i]:
-                        maxValPos.pop()
-                    maxValPos.append(i)
-            else:
-                while len(maxValPos) > 0 and nums[right] >= nums[maxValPos[-1]]:
-                    maxValPos.pop()
-                maxValPos.append(right)
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        result = list[int]()
+        maxValPos = collections.deque(maxlen=k)
+        for i in range(0, k):
+            while len(maxValPos) > 0 and nums[i] >= nums[maxValPos[-1]]:
+                maxValPos.pop()
+            maxValPos.append(i)
+
+        result.append(nums[maxValPos[0]])
+        for i in range(k, len(nums)):
+            while len(maxValPos) > 0 and nums[i] >= nums[maxValPos[-1]]:
+                maxValPos.pop()
+            maxValPos.append(i)
+
+            while len(maxValPos) > 0 and maxValPos[0] <= i - k:
+                maxValPos.popleft()
+
             result.append(nums[maxValPos[0]])
-            left += 1
-            right += 1
         return result
