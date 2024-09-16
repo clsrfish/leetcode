@@ -7,7 +7,7 @@
 		"prefix": "leetcode_solution",
 		"body": [
 			"from typing import List, Optional",
-			"from src.model import ListNode",
+			"from src.model import ListNode, TreeNode",
 			"class Solution:",
 			"\t${1:pass}",
 		]
@@ -17,7 +17,7 @@
 		"body": [
 			"import pytest",
 			"from src.leetcode.s${TM_FILENAME_BASE/(\\d+)_test$/$1/} import Solution",
-			"from src.model import ListNode",
+			"from src.model import ListNode, TreeNode",
 			"dataset = lambda: [",
 			"\t($2),",
 			"]",
