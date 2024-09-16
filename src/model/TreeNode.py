@@ -6,7 +6,7 @@ class TreeNode:
 
     @staticmethod
     def fromList(source: list[int], i: int = 0) -> "TreeNode":
-        if i >= len(source):
+        if i >= len(source) or source[i] is None:
             return None
         node = TreeNode(source[i])
         node.left = TreeNode.fromList(source, 2 * i + 1)
