@@ -5,13 +5,32 @@ class TreeNode:
         self.right = right
 
     @staticmethod
-    def fromList(source: list[int], i: int = 0) -> "TreeNode":
-        if i >= len(source) or source[i] is None:
+    def fromList(source: list[int]) -> "TreeNode":
+        source = list(source)
+        if len(source) == 0:
             return None
-        node = TreeNode(source[i])
-        node.left = TreeNode.fromList(source, 2 * i + 1)
-        node.right = TreeNode.fromList(source, 2 * i + 2)
-        return node
+        i = 0
+        root = TreeNode(source[i])
+        i += 1
+        queue = list[TreeNode]()
+        queue.append(root)
+        while len(queue) > 0 and i < len(source):
+            node = queue.pop(0)
+            left_val = source[i]
+            i += 1
+            if left_val is not None:
+                node.left = TreeNode(left_val)
+                queue.append(node.left)
+            if len(source) == 0:
+                break
+
+            right_val = source[i]
+            i += 1
+            if right_val is not None:
+                node.right = TreeNode(right_val)
+                queue.append(node.right)
+
+        return root
 
     @staticmethod
     def toList(root: "TreeNode") -> list[int]:
@@ -27,4 +46,5 @@ class TreeNode:
                 queue.append(node.left)
             if node.right:
                 queue.append(node.right)
+        return result
         return result
