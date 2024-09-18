@@ -21,7 +21,7 @@ class TreeNode:
             if left_val is not None:
                 node.left = TreeNode(left_val)
                 queue.append(node.left)
-            if len(source) == 0:
+            if i >= len(source):
                 break
 
             right_val = source[i]
