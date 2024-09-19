@@ -34,17 +34,17 @@ class TreeNode:
 
     @staticmethod
     def toList(root: "TreeNode") -> list[int]:
-
         result = list[int]()
         queue = list[TreeNode]()
         if root is not None:
             queue.append(root)
         while len(queue) > 0:
             node = queue.pop(0)
-            result.append(node.val)
-            if node.left:
-                queue.append(node.left)
-            if node.right:
-                queue.append(node.right)
-        return result
+            result.append(node.val if node else None)
+            if node is None:
+                continue
+            queue.append(node.left)
+            queue.append(node.right)
+        while len(result) > 0 and result[-1] is None:
+            result.pop()
         return result
