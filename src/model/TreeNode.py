@@ -1,3 +1,6 @@
+from typing import Optional
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -48,3 +51,10 @@ class TreeNode:
         while len(result) > 0 and result[-1] is None:
             result.pop()
         return result
+
+    def findNode(root: Optional["TreeNode"], val: int) -> Optional["TreeNode"]:
+        if root is None:
+            return None
+        if root.val == val:
+            return root
+        return TreeNode.findNode(root.left, val) or TreeNode.findNode(root.right, val)
