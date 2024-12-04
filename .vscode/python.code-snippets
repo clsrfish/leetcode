@@ -9,7 +9,8 @@
 			"from typing import List, Optional",
 			"from src.model import ListNode, TreeNode",
 			"class Solution:",
-			"\t${1:pass}",
+			"\t${1}",
+			"\t\tpass"
 		]
 	},
 	"LeetCode test": {
@@ -21,9 +22,10 @@
 			"dataset = lambda: [",
 			"\t($2),",
 			"]",
-			"@pytest.mark.parametrize(\"$1\", dataset())",
-			"def test($1):",
-			"\t${3:pass}",
+			"@pytest.mark.parametrize(\"$1,expected\", dataset())",
+			"def test($1,expected):",
+			"\tresult = Solution().${3}",
+			"\tassert result == expected"
 		]
 	}
 }
