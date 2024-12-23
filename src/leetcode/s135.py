@@ -1,38 +1,21 @@
-from typing import List, Optional
-
-from src.model import ListNode, TreeNode
+from typing import List
 
 
 class Solution:
 
     def candy(self, ratings: List[int]) -> int:
-        i = 0
-        candies = [0] * len(ratings)
-        while i < len(ratings):
-            while (i + 1) < len(ratings) and ratings[i] >= ratings[i + 1]:
-                i += 1
+        n = len(ratings)
+        candies = [0] * n
+        for i in range(n):
+            if i > 0 and ratings[i] > ratings[i - 1]:
+                candies[i] = candies[i - 1] + 1
+            else:
+                candies[i] = 1
 
-            candies[i] = 1
-            for back in range(1, i + 1):
-                j = i - back
-                if ratings[j] < ratings[j + 1]:
-                    break
-                elif ratings[j] > ratings[j + 1]:
-                    candies[j] = max(candies[j + 1] + 1, candies[j])
-                else:
-                    if candies[j] == 0:
-                        candies[j] = 1
-            if i == len(ratings) - 1:
-                break
-
-            for j in range(i + 1, len(ratings)):
-                if ratings[j] < ratings[j - 1]:
-                    i = j
-                    break
-                elif ratings[j] > ratings[j - 1]:
-                    candies[j] = candies[j - 1] + 1
-                else:
-                    candies[j] = 1
-                i = j + 1
+        for i in range(n - 1, -1, -1):
+            if i < n - 1 and ratings[i] > ratings[i + 1]:
+                candies[i] = max(candies[i], candies[i + 1] + 1)
+            else:
+                candies[i] = max(candies[i], 1)
 
         return sum(candies)
