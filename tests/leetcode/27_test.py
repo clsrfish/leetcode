@@ -11,12 +11,12 @@ dataset = lambda: [
 ]
 
 
-@pytest.mark.parametrize("nums,val,expectedNums", dataset())
-def test(nums: list[int], val: int, expectedNums: list[int]):
+@pytest.mark.parametrize("nums,val,expected", dataset())
+def test(nums: list[int], val: int, expected: list[int]):
     solution = Solution()
     k = solution.removeElement(nums, val)
-    assert k == len(expectedNums)
+    assert k == len(expected)
 
     sorted(nums[:k])
     for i in range(0, k):
-        assert nums[i] == expectedNums[i]
+        assert nums[i] == expected[i]
